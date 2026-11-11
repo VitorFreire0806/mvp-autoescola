@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rota Certa — Escola de Condução em Coimbra · Carta de Ligeiros, Motos e Pesados</title>
+<meta name="description" content="Escola de condução em Coimbra. Carta de ligeiros, motociclos e pesados, aulas de código online, viaturas recentes e 94% de aprovação à primeira. Inscreva-se.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0b0c0e;
+    --graphite:#131518;
+    --steel:#1b1e22;
+    --steel-2:#24282d;
+    --silver:#c3c8ce;
+    --white:#f4f5f6;
+    --red:#c8102e;
+    --light:#eef0f2;
+    --light-2:#e2e5e8;
+    --ink:#0e1013;
+    --text:#2a2e33;
+    --muted:#6c727a;
+    --grey:#8e959d;
+    --line:#d3d7dc;
+    --line-dark:rgba(255,255,255,.1);
+    /* usados pelo seletor de idiomas */
+    --ivory:#eef0f2;
+    --ivory-2:#e2e5e8;
+    --brass-light:#c3c8ce;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,"Helvetica Neue",Arial,sans-serif;font-size:16px;background:var(--black);color:#b9bec4;line-height:1.7;-webkit-font-smoothing:antialiased}
+  img{display:block;width:100%;height:100%;object-fit:cover;color:transparent}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3,h4{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:700;color:#fff;line-height:1;text-transform:uppercase;letter-spacing:.01em}
+  em{font-style:normal}
+  .container{width:min(1500px,90%);margin-inline:auto}
+  section{padding:130px 0}
+  .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:.74rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--silver);margin-bottom:22px}
+  .eyebrow::before{content:"";width:34px;height:2px;background:var(--red)}
+  .section-head{max-width:860px;margin-bottom:64px}
+  .section-head.center{text-align:center;margin:0 auto 64px}
+  .section-head.center .eyebrow::after{content:"";width:34px;height:2px;background:var(--red)}
+  .section-head h2{font-size:clamp(2.8rem,5vw,4.8rem)}
+  .section-head h2 em{color:var(--grey)}
+  .section-head p{color:var(--grey);margin-top:20px;font-size:1.08rem;font-weight:300}
+  .light{background:var(--light);color:var(--text)}
+  .light h2,.light h3{color:var(--ink)}
+  .light .eyebrow{color:var(--muted)}
+  .light .section-head h2 em{color:#8a9097}
+  .light .section-head p{color:var(--muted)}
+  .graphite{background:var(--graphite)}
+  .ph{background:var(--steel);overflow:hidden;position:relative}
+  .light .ph{background:var(--light-2)}
+  .ph img{transition:transform 1.2s cubic-bezier(.2,.6,.2,1),filter .6s}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;padding:18px 34px;font-family:"Barlow Condensed",sans-serif;font-size:1.02rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;border:1px solid transparent;border-radius:2px;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+  .btn::after{content:"";width:18px;height:1px;background:currentColor;transition:width .3s}
+  .btn:hover::after{width:28px}
+  .btn-white{background:#fff;color:var(--ink);border-color:#fff}
+  .btn-white:hover{background:var(--red);border-color:var(--red);color:#fff}
+  .btn-line{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+  .btn-line:hover{border-color:#fff}
+  .btn-dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .btn-dark:hover{background:var(--red);border-color:var(--red)}
+  .btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+  .btn-outline:hover{background:var(--ink);color:#fff}
+  .btn-wa{background:#25d366;color:#fff;border-color:#25d366}
+  .btn-wa::after{content:none}
+
+  /* CABEÇALHO */
+  header{position:fixed;inset:0 0 auto 0;z-index:50;color:#fff;border-bottom:1px solid transparent;transition:background .5s,border-color .5s}
+  header.scrolled{background:rgba(11,12,14,.97);border-bottom-color:var(--line-dark)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:92px;gap:28px}
+  .logo{display:flex;align-items:center;gap:16px;white-space:nowrap}
+  .logo .mark{width:50px;height:50px;flex:none}
+  .logo .mark svg{width:100%;height:100%}
+  .logo strong{display:block;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:1.6rem;line-height:1;letter-spacing:.2em}
+  .logo small{display:block;font-size:.62rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--grey);margin-top:7px;padding-top:6px;border-top:1px solid rgba(255,255,255,.15)}
+  .nav ul{display:flex;gap:38px;list-style:none;font-family:"Barlow Condensed",sans-serif;font-size:1.02rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
+  .nav ul a{white-space:nowrap;color:#cfd3d8;position:relative;padding:6px 0}
+  .nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+  .nav ul a:hover{color:#fff}
+  .nav ul a:hover::after{transform:scaleX(1)}
+  .nav-right{display:flex;align-items:center;gap:16px}
+  .nav-right .btn{padding:13px 24px}
+  .nav-right .btn::after{content:none}
+  .menu-toggle{display:none;background:none;border:0;font-size:1.7rem;cursor:pointer;color:#fff}
+
+
+  /* IDIOMAS */
+  .lang{position:relative}
+  .lang-btn{display:flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid rgba(245,239,230,.35);background:transparent;color:#fff;font:inherit;font-size:.74rem;letter-spacing:.16em;cursor:pointer;transition:.3s}
+  .lang-btn:hover{border-color:var(--brass-light)}
+  .flag{width:22px;height:16px;object-fit:cover;box-shadow:0 0 0 1px rgba(0,0,0,.15);flex:none}
+  .caret{font-size:.6rem;opacity:.7}
+  .nav ul.lang-menu{display:block;gap:0;font-size:.92rem;letter-spacing:0;text-transform:none}
+  .lang-menu{position:absolute;right:0;top:calc(100% + 12px);background:#fff;box-shadow:0 18px 44px rgba(0,0,0,.28);list-style:none;padding:8px;min-width:210px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:.25s;z-index:70}
+  .lang.open .lang-menu{opacity:1;visibility:visible;transform:none}
+  .lang-menu button{display:flex;align-items:center;gap:12px;width:100%;padding:10px 12px;border:0;background:none;font:inherit;color:var(--ink);cursor:pointer;text-align:left}
+  .lang-menu button:hover{background:var(--ivory)}
+  .lang-menu button.active{background:var(--ivory-2);font-weight:600}
+
+  /* HERO */
+  .hero{background:var(--black);color:#fff;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:180px 0 0;position:relative;overflow:hidden;isolation:isolate}
+  .slides{position:absolute;inset:0;z-index:-2;background:var(--black)}
+  .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.8s ease}
+  .slide.on{opacity:1}
+  .slide img{transform:scale(1.14);transition:transform 8s ease-out;filter:grayscale(.45) contrast(1.08) brightness(.9)}
+  .slide.on img{transform:scale(1)}
+  .hero-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(11,12,14,.96) 0%,rgba(11,12,14,.82) 42%,rgba(11,12,14,.35) 100%),linear-gradient(0deg,rgba(11,12,14,.96) 0%,rgba(11,12,14,0) 45%),linear-gradient(180deg,rgba(11,12,14,.7) 0%,rgba(11,12,14,0) 25%)}
+  .hero h1{font-size:clamp(4rem,10vw,10.5rem);font-weight:700;color:#fff;line-height:.9;margin-bottom:34px;max-width:1100px;letter-spacing:-.005em}
+  .hero h1 em{display:block;color:transparent;-webkit-text-stroke:2px #fff}
+  .hero p{font-size:1.18rem;font-weight:300;color:#cfd3d8;max-width:600px;margin-bottom:44px}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+  .hero-facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:96px;border-top:1px solid var(--line-dark)}
+  .hero-facts div{padding:30px 0 40px;position:relative}
+  .hero-facts div::before{content:"";position:absolute;top:-1px;left:0;width:48px;height:2px;background:var(--red)}
+  .hero-facts div+div{padding-left:40px;border-left:1px solid var(--line-dark)}
+  .hero-facts div+div::before{left:40px}
+  .hero-facts strong{display:block;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:3.4rem;color:#fff;line-height:1;margin-bottom:8px}
+  .hero-facts span{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--grey)}
+  .hero-facts strong span{font:inherit;letter-spacing:inherit;text-transform:none;color:inherit}
+
+  /* ABERTURA — conta-rotações e abertura ao meio */
+  .intro{position:fixed;inset:0;z-index:200;pointer-events:none}
+  .half{position:absolute;left:0;right:0;height:50.5%;background:var(--black)}
+  .half.t{top:0;animation:upT 1s cubic-bezier(.77,0,.18,1) 2.8s forwards}
+  .half.b{bottom:0;animation:downB 1s cubic-bezier(.77,0,.18,1) 2.8s forwards}
+  @keyframes upT{to{transform:translateY(-101%)}}
+  @keyframes downB{to{transform:translateY(101%)}}
+  .seam{position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px;background:var(--red);transform:scaleX(0);animation:seam .45s cubic-bezier(.7,0,.3,1) 2.4s forwards,fadeOut .3s ease 3s forwards;box-shadow:0 0 18px rgba(200,16,46,.8)}
+  @keyframes seam{to{transform:scaleX(1)}}
+  .gauge{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;animation:fadeOut .35s ease 2.35s forwards}
+  .gauge svg{width:min(420px,80vw);height:auto;overflow:visible}
+  .gauge .arc{fill:none;stroke:#3a3f46;stroke-width:3;stroke-dasharray:566;stroke-dashoffset:566;animation:draw .9s cubic-bezier(.6,0,.3,1) .15s forwards}
+  .gauge .redzone{fill:none;stroke:var(--red);stroke-width:6;stroke-dasharray:107;stroke-dashoffset:107;animation:draw .4s ease .9s forwards}
+  .gauge .ticks{stroke:#c3c8ce;opacity:0;animation:fadeIn .5s ease .55s forwards}
+  .gauge .nums{fill:#8e959d;font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:15px;opacity:0;animation:fadeIn .5s ease .7s forwards}
+  .gauge .needle{transform-origin:150px 160px;transform:rotate(-135deg);animation:rev 1.5s cubic-bezier(.45,0,.2,1) 1s forwards}
+  .gauge .needle line{stroke:var(--red);stroke-width:3;stroke-linecap:round}
+  .gauge .hub{fill:#0b0c0e;stroke:#c3c8ce;stroke-width:2}
+  @keyframes rev{0%{transform:rotate(-135deg)}55%{transform:rotate(104deg)}100%{transform:rotate(-62deg)}}
+  .gauge .name{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:clamp(2rem,4vw,2.8rem);letter-spacing:.32em;padding-left:.32em;color:#fff;opacity:0;animation:fadeIn .7s ease 1.65s forwards;margin-top:-4px}
+  .gauge .sub{font-size:.7rem;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--grey);opacity:0;animation:fadeIn .7s ease 1.85s forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  @keyframes fadeOut{to{opacity:0}}
+  :root{--d:3.3s}
+  .no-intro{--d:.1s}
+  .no-intro .intro{display:none}
+  header{animation:fadeDown 1s ease var(--d) both}
+  .hero .eyebrow{animation:rise .9s ease calc(var(--d) + .15s) both}
+  .hero h1{animation:reveal 1.3s cubic-bezier(.2,.7,.2,1) calc(var(--d) + .3s) both}
+  .hero p{animation:rise 1s ease calc(var(--d) + .75s) both}
+  .hero-actions{animation:rise 1s ease calc(var(--d) + .95s) both}
+  .hero-facts{animation:rise 1s ease calc(var(--d) + 1.2s) both}
+  @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+  @keyframes reveal{from{opacity:0;clip-path:inset(0 0 100% 0);transform:translateY(40px)}to{opacity:1;clip-path:inset(0 0 -12% 0);transform:none}}
+  @keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:none}}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+  /* CATEGORIAS */
+  .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line-dark);border:1px solid var(--line-dark)}
+  .cat{background:var(--graphite);position:relative;overflow:hidden;transition:background .35s}
+  .cat:hover{background:var(--steel)}
+  .cat .ph{height:200px}
+  .cat img{filter:grayscale(1) brightness(.85)}
+  .cat:hover img{filter:grayscale(0);transform:scale(1.05)}
+  .cat-body{padding:28px 28px 32px;position:relative}
+  .cat-body::before{content:"";position:absolute;top:0;left:28px;width:40px;height:2px;background:var(--red);transition:width .35s}
+  .cat:hover .cat-body::before{width:80px}
+  .cat .code{display:block;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:3.2rem;line-height:1;color:#fff;margin:6px 0 10px}
+  .cat h3{font-size:1.45rem;margin-bottom:8px;letter-spacing:.04em}
+  .cat p{color:var(--grey);font-size:.93rem;font-weight:300}
+  .cat .age{display:block;margin-top:16px;font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--silver)}
+
+  /* FROTA */
+  .fleet{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .car .ph{aspect-ratio:4/3;margin-bottom:22px}
+  .car:hover img{transform:scale(1.05)}
+  .car h3{font-size:1.7rem;margin-bottom:8px;display:flex;align-items:center;gap:12px}
+  .car h3::before{content:"";width:22px;height:2px;background:var(--red)}
+  .car p{color:var(--muted);font-weight:300;font-size:.96rem}
+
+  /* PROCESSO */
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line-dark)}
+  .step{padding:34px 28px 0 0;position:relative}
+  .step::before{content:"";position:absolute;top:-1px;left:0;width:0;height:2px;background:var(--red);transition:width .6s}
+  .step:hover::before{width:100%}
+  .step .n{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:4.2rem;line-height:1;color:transparent;-webkit-text-stroke:1px #6c727a;margin-bottom:22px}
+  .step h3{font-size:1.5rem;margin-bottom:10px;letter-spacing:.04em}
+  .step p{color:var(--grey);font-weight:300;font-size:.95rem}
+
+  /* PORQUÊ NÓS */
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
+  .why-img{height:clamp(480px,40vw,660px)}
+  .why-img img{filter:grayscale(.3)}
+  .why h2{font-size:clamp(2.8rem,4.6vw,4.4rem);margin-bottom:24px}
+  .why h2 em{color:#8a9097}
+  .why-grid > div > p{font-weight:300;font-size:1.08rem;margin-bottom:40px}
+  .feats{display:grid;grid-template-columns:1fr 1fr;gap:34px 40px}
+  .feat .ic{width:52px;height:52px;border:1px solid var(--line);display:grid;place-items:center;margin-bottom:16px;background:#fff}
+  .feat .ic svg{width:24px;height:24px;stroke:var(--ink);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .feat h3{font-size:1.35rem;margin-bottom:6px;letter-spacing:.04em}
+  .feat p{color:var(--muted);font-weight:300;font-size:.95rem}
+
+  /* TESTE DE CÓDIGO */
+  .quiz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .q{background:var(--steel);border:1px solid var(--line-dark);padding:34px 30px;display:flex;flex-direction:column}
+  .q svg{width:96px;height:96px;margin:0 auto 24px}
+  .q h3{font-size:1.3rem;text-align:center;margin-bottom:20px;letter-spacing:.04em}
+  .q .opts{display:flex;flex-direction:column;gap:10px}
+  .q button{font:inherit;text-align:left;padding:14px 16px;border:1px solid rgba(255,255,255,.14);background:transparent;color:#dfe2e5;cursor:pointer;transition:border-color .2s,background .2s}
+  .q button:hover{border-color:#fff}
+  .q.done button{cursor:default}
+  .q.done button:hover{border-color:rgba(255,255,255,.14)}
+  .q button.ok{background:rgba(43,179,94,.14);border-color:#2bb35e!important;color:#9be7b5;font-weight:600}
+  .q button.no{background:rgba(200,16,46,.16);border-color:var(--red)!important;color:#ff9aa8}
+  .q .fb{margin-top:16px;text-align:center;font-weight:600;min-height:1.7em;letter-spacing:.04em}
+  .q .fb span{display:none}
+  .q.right .fb .y{display:inline;color:#9be7b5}
+  .q.wrong .fb .x{display:inline;color:#ff9aa8}
+  .score{margin-top:36px;text-align:center;font-size:1.05rem;color:#dfe2e5;letter-spacing:.06em}
+  .score b{font-family:"Barlow Condensed",sans-serif;font-size:1.8rem;color:#fff}
+
+  /* PREÇOS */
+  .plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1320px;margin:0 auto}
+  .plan{background:#fff;border:1px solid var(--line);padding:48px 42px;display:flex;flex-direction:column;position:relative}
+  .plan.featured{background:var(--ink);border-color:var(--ink);color:#b9bec4;border-top:3px solid var(--red)}
+  .plan.featured h3{color:#fff}
+  .plan .badge{align-self:flex-start;margin-bottom:18px;font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.3);padding:5px 10px}
+  .plan h3{font-size:2rem;letter-spacing:.03em}
+  .plan .for{color:var(--muted);font-weight:300;margin-top:6px}
+  .plan.featured .for{color:var(--grey)}
+  .plan .price{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:4rem;color:var(--ink);line-height:1;margin:32px 0 4px}
+  .plan.featured .price{color:#fff}
+  .plan .pp{font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .plan.featured .pp{color:var(--grey)}
+  .plan ul{list-style:none;margin:28px 0 36px;flex:1;border-top:1px solid var(--line)}
+  .plan.featured ul{border-color:var(--line-dark)}
+  .plan li{padding:12px 0;border-bottom:1px solid var(--line);font-weight:300;display:flex;gap:14px;align-items:baseline}
+  .plan.featured li{border-color:var(--line-dark)}
+  .plan li::before{content:"";flex:none;width:10px;height:2px;background:var(--red);transform:translateY(-4px)}
+  .plan .btn{width:100%}
+  .plans-note{text-align:center;color:var(--muted);font-weight:300;margin-top:34px;font-size:.94rem}
+
+  /* OPINIÕES */
+  .r-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .review{background:var(--steel);border:1px solid var(--line-dark);padding:42px 38px;position:relative}
+  .review::before{content:"“";position:absolute;top:18px;right:30px;font-family:Georgia,serif;font-size:5rem;line-height:1;color:rgba(255,255,255,.08)}
+  .review .stars{color:#fff;letter-spacing:5px;margin-bottom:18px;font-size:.9rem}
+  .review p{font-size:1.08rem;line-height:1.7;color:#e3e6e9;margin-bottom:26px}
+  .review strong{display:block;font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:1.15rem;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+  .review small{color:var(--grey)}
+
+  /* FAQ */
+  .faq{max-width:980px;margin:0 auto;border-top:1px solid var(--line)}
+  .faq details{border-bottom:1px solid var(--line);padding:26px 0}
+  .faq summary{font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:1.45rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-family:Inter,sans-serif;font-weight:300;color:var(--red);font-size:1.7rem;line-height:1}
+  .faq details[open] summary::after{content:"−"}
+  .faq details p{color:var(--muted);font-weight:300;margin-top:12px}
+
+  /* CONTACTO */
+  .contact-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:100px;align-items:start}
+  .contact h2{font-size:clamp(2.8rem,4.6vw,4.4rem);margin-bottom:24px}
+  .contact-grid > div > p{color:var(--grey);font-weight:300;font-size:1.08rem;margin-bottom:44px}
+  .c-line{padding:20px 0;border-top:1px solid var(--line-dark)}
+  .c-line strong{display:block;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);font-weight:600;margin-bottom:4px}
+  .c-line span{color:#fff;font-weight:300}
+  .form{background:var(--light);color:var(--text);padding:clamp(34px,4.5vw,60px);border-top:3px solid var(--red)}
+  .graphite .form h3,.contact .form h3{color:var(--ink)}
+  .form h3{font-size:2.3rem;margin-bottom:32px;letter-spacing:.03em}
+  .fields{display:grid;grid-template-columns:1fr 1fr;gap:26px 28px}
+  .field{display:flex;flex-direction:column;gap:8px}
+  .field.full{grid-column:span 2}
+  .field label{font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .field input,.field select,.field textarea{border:0;border-bottom:1px solid #b5bbc2;padding:10px 0;font:inherit;color:var(--ink);background:transparent;outline:none;transition:border-color .3s}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--ink)}
+  .field textarea{min-height:96px;resize:vertical}
+  .form .btn{width:100%;margin-top:32px;padding:19px}
+  .form-note{text-align:center;color:var(--muted);font-weight:300;font-size:.86rem;margin-top:14px}
+
+  .map{height:400px;filter:grayscale(1) invert(.92) contrast(.9)}
+  .map iframe{width:100%;height:100%;border:0}
+
+  footer{background:#060708;color:#80868e;padding:86px 0 34px}
+  .foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;margin-bottom:64px}
+  footer .logo{color:#fff}
+  footer p{margin-top:26px;max-width:440px;font-weight:300}
+  footer h4{font-size:1.15rem;letter-spacing:.16em;margin-bottom:16px}
+  footer li{list-style:none;margin-bottom:10px;font-weight:300}
+  footer a:hover{color:#fff}
+  .legal{border-top:1px solid rgba(255,255,255,.07);padding-top:26px;text-align:center;font-size:.8rem;font-weight:300}
+
+  .wa-float{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;font-size:1.6rem;box-shadow:0 10px 24px rgba(0,0,0,.35);z-index:60;transition:transform .2s;animation:fadeIn 1s ease calc(var(--d) + 1.8s) both}
+  .wa-float:hover{transform:scale(1.08)}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity 1s ease,transform 1s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (prefers-reduced-motion:reduce){
+    .intro{display:none}
+    *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}
+    .reveal{opacity:1;transform:none}
+  }
+  @media (max-width:1280px){
+    .nav ul{gap:26px;font-size:.95rem}
+    .logo small{display:none}
+    .cat-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:1100px){
+    .fleet{grid-template-columns:repeat(2,1fr)}
+    .steps{grid-template-columns:repeat(3,1fr);row-gap:44px}
+    .why-grid,.contact-grid{gap:70px}
+  }
+  @media (max-width:1000px){
+    .why-grid,.contact-grid{grid-template-columns:1fr}
+    .plan-grid,.r-grid,.quiz-grid{grid-template-columns:1fr;max-width:620px;margin:0 auto}
+    .foot{grid-template-columns:1fr}
+  }
+  @media (max-width:960px){
+    .nav ul{display:none}
+    .nav ul.open{display:flex;flex-direction:column;position:absolute;top:92px;left:0;right:0;background:var(--black);padding:28px 5%;gap:22px;border-bottom:1px solid var(--line-dark)}
+    .menu-toggle{display:block}
+    .nav-right .btn{display:none}
+    section{padding:90px 0}
+    .hero{padding-top:150px}
+  }
+  @media (max-width:700px){
+    .cat .ph{height:130px}
+    .cat-body{padding:22px 18px 24px}
+    .cat-body::before{left:18px}
+    .cat .code{font-size:2.4rem}
+    .cat h3{font-size:1.15rem}
+    .cat p{display:none}
+    .steps{grid-template-columns:1fr 1fr}
+    .fleet{gap:18px}
+    .car h3{font-size:1.3rem}
+  }
+  @media (max-width:600px){
+    .feats,.fields{grid-template-columns:1fr}
+    .field.full{grid-column:span 1}
+    .hero-facts strong{font-size:2.3rem}
+    .hero-facts div+div{padding-left:18px}
+    .hero-facts div+div::before{left:18px}
+    .why-img{height:360px}
+    .logo strong{font-size:1.25rem;letter-spacing:.14em}
+    .logo .mark{width:42px;height:42px}
+  }
+</style>
+</head>
+<body>
+<script>try{if(sessionStorage.getItem("rcIntro2")||matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("no-intro");sessionStorage.setItem("rcIntro2","1")}catch(e){}</script>
+<div class="intro" aria-hidden="true">
+  <div class="half t"></div><div class="half b"></div>
+  <div class="gauge">
+    <svg viewBox="0 0 300 250">
+      <path class="arc" d="M65.1 244.9 A120 120 0 1 1 234.9 244.9"/>
+      <path class="redzone" d="M261.5 149.0 A112 112 0 0 1 229.2 239.2"/>
+      <g class="ticks"><line x1="79.3" y1="230.7" x2="68.0" y2="242.0" stroke-width="2"/><line x1="54.8" y1="210.9" x2="47.7" y2="214.7" stroke-width="1"/><line x1="51.9" y1="179.5" x2="36.2" y2="182.6" stroke-width="2"/><line x1="42.5" y1="149.4" x2="34.6" y2="148.6" stroke-width="1"/><line x1="57.6" y1="121.7" x2="42.8" y2="115.6" stroke-width="2"/><line x1="66.5" y1="91.5" x2="60.3" y2="86.4" stroke-width="1"/><line x1="94.4" y1="76.9" x2="85.6" y2="63.5" stroke-width="2"/><line x1="118.6" y1="56.7" x2="116.3" y2="49.0" stroke-width="1"/><line x1="150.0" y1="60.0" x2="150.0" y2="44.0" stroke-width="2"/><line x1="181.4" y1="56.7" x2="183.7" y2="49.0" stroke-width="1"/><line x1="205.6" y1="76.9" x2="214.4" y2="63.5" stroke-width="2"/><line x1="233.5" y1="91.5" x2="239.7" y2="86.4" stroke-width="1"/><line x1="242.4" y1="121.7" x2="257.2" y2="115.6" stroke-width="2"/><line x1="257.5" y1="149.4" x2="265.4" y2="148.6" stroke-width="1"/><line x1="248.1" y1="179.5" x2="263.8" y2="182.6" stroke-width="2"/><line x1="245.2" y1="210.9" x2="252.3" y2="214.7" stroke-width="1"/><line x1="220.7" y1="230.7" x2="232.0" y2="242.0" stroke-width="2"/></g>
+      <g class="nums"><text x="90.6" y="224.4" text-anchor="middle">0</text><text x="67.6" y="181.4" text-anchor="middle">1</text><text x="72.4" y="132.9" text-anchor="middle">2</text><text x="103.3" y="95.2" text-anchor="middle">3</text><text x="150.0" y="81.0" text-anchor="middle">4</text><text x="196.7" y="95.2" text-anchor="middle">5</text><text x="227.6" y="132.9" text-anchor="middle">6</text><text x="232.4" y="181.4" text-anchor="middle">7</text><text x="209.4" y="224.4" text-anchor="middle">8</text></g>
+      <text x="150" y="214" text-anchor="middle" fill="#6c727a" font-family="Barlow Condensed,sans-serif" font-size="11" letter-spacing="3">RPM × 1000</text>
+      <g class="needle"><line x1="150" y1="172" x2="150" y2="58"/></g>
+      <circle class="hub" cx="150" cy="160" r="9"/>
+    </svg>
+    <div class="name">ROTA CERTA</div>
+    <div class="sub" data-i18n="k0">Escola de Condução</div>
+  </div>
+  <div class="seam"></div>
+</div>
+
+<header id="header">
+  <div class="container nav">
+    <a href="#inicio" class="logo"><span class="mark"><svg viewBox="0 0 50 50"><path d="M25 2 L45 13.5 V36.5 L25 48 L5 36.5 V13.5 Z" fill="none" stroke="#c3c8ce" stroke-width="1.6"/><path d="M25 7 L40.6 16 V34 L25 43 L9.4 34 V16 Z" fill="none" stroke="#c8102e" stroke-width="1"/><text x="25" y="31.5" text-anchor="middle" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="700" font-size="17" letter-spacing="1" fill="#fff">RC</text></svg></span><span><strong>ROTA CERTA</strong><small data-i18n="k0">Escola de Condução</small></span></a>
+    <ul id="menu">
+      <li><a href="#categorias" data-i18n="k1">Categorias</a></li>
+      <li><a href="#frota" data-i18n="k2">Frota</a></li>
+      <li><a href="#como" data-i18n="k3">Como funciona</a></li>
+      <li><a href="#precos" data-i18n="k4">Preços</a></li>
+      <li><a href="#contactos" data-i18n="k5">Contactos</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang" id="lang">
+        <button type="button" class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+          <img class="flag" id="langFlag" src="https://flagcdn.com/w40/pt.png" alt="" width="22" height="16"><span id="langCode">PT</span><span class="caret">▾</span>
+        </button>
+        <ul class="lang-menu" id="langMenu">
+          <li><button type="button" data-lang="pt"><img class="flag" src="https://flagcdn.com/w40/pt.png" alt="" width="22" height="16">Português</button></li>
+          <li><button type="button" data-lang="en"><img class="flag" src="https://flagcdn.com/w40/gb.png" alt="" width="22" height="16">English</button></li>
+          <li><button type="button" data-lang="es"><img class="flag" src="https://flagcdn.com/w40/es.png" alt="" width="22" height="16">Español</button></li>
+          <li><button type="button" data-lang="fr"><img class="flag" src="https://flagcdn.com/w40/fr.png" alt="" width="22" height="16">Français</button></li>
+          <li><button type="button" data-lang="it"><img class="flag" src="https://flagcdn.com/w40/it.png" alt="" width="22" height="16">Italiano</button></li>
+          <li><button type="button" data-lang="de"><img class="flag" src="https://flagcdn.com/w40/de.png" alt="" width="22" height="16">Deutsch</button></li>
+          <li><button type="button" data-lang="uk"><img class="flag" src="https://flagcdn.com/w40/ua.png" alt="" width="22" height="16">Українська</button></li>
+          <li><button type="button" data-lang="ru"><img class="flag" src="https://flagcdn.com/w40/ru.png" alt="" width="22" height="16">Русский</button></li>
+          <li><button type="button" data-lang="ja"><img class="flag" src="https://flagcdn.com/w40/jp.png" alt="" width="22" height="16">日本語</button></li>
+          <li><button type="button" data-lang="zh"><img class="flag" src="https://flagcdn.com/w40/cn.png" alt="" width="22" height="16">中文</button></li>
+        </ul>
+      </div>
+
+      <a href="#contactos" class="btn btn-white" data-i18n="k6">Inscrever-me</a>
+      <button class="menu-toggle" aria-label="Abrir menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="slides">
+    <div class="slide on"><img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=2400&q=80" alt="" fetchpriority="high"></div>
+    <div class="slide"><img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=2400&q=80" alt=""></div>
+    <div class="slide"><img src="https://images.unsplash.com/photo-1485291571150-772bcfc10da5?auto=format&fit=crop&w=2400&q=80" alt=""></div>
+  </div>
+  <div class="hero-shade"></div>
+  <div class="container">
+    <span class="eyebrow" data-i18n="k7">Escola de condução · Coimbra</span>
+    <h1 data-i18n="k8">Assuma <em>o controlo.</em></h1>
+    <p data-i18n="k9">Aulas de código e de condução com instrutores pacientes, carros recentes e horários à sua medida. Da primeira aula ao dia do exame.</p>
+    <div class="hero-actions">
+      <a href="#contactos" class="btn btn-white" data-i18n="k6">Inscrever-me</a>
+      <a href="#categorias" class="btn btn-line" data-i18n="k10">Ver categorias</a>
+    </div>
+    <div class="hero-facts">
+      <div><strong><span data-count="94">94</span>%</strong><span data-i18n="k11">Aprovação à primeira</span></div>
+      <div><strong data-count="25">25</strong><span data-i18n="k12">Anos de experiência</span></div>
+      <div><strong data-count="12">12</strong><span data-i18n="k13">Viaturas de ensino</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIAS -->
+<section class="graphite" id="categorias">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="k1">Categorias</span>
+      <h2 data-i18n="k14">Uma carta para <em>cada estrada</em></h2>
+      <p data-i18n="k15">Ensinamos todas as categorias, de ciclomotores a pesados, com viaturas adaptadas a cada uma.</p>
+    </div>
+    <div class="cat-grid reveal">
+      <article class="cat"><div class="ph"><img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=700&q=75" alt=""></div><div class="cat-body"><span class="code">B</span><h3 data-i18n="k16">Ligeiros</h3><p data-i18n="k17">A carta mais procurada: automóveis até 3500 kg e 9 lugares.</p><span class="age" data-i18n="k18">A partir dos 18 anos</span></div></article>
+      <article class="cat"><div class="ph"><img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=700&q=75" alt=""></div><div class="cat-body"><span class="code">BE</span><h3 data-i18n="k19">Ligeiros com reboque</h3><p data-i18n="k20">Para conduzir com atrelado, caravana ou reboque de barco.</p><span class="age" data-i18n="k18">A partir dos 18 anos</span></div></article>
+      <article class="cat"><div class="ph"><img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=700&q=75" alt=""></div><div class="cat-body"><span class="code">A</span><h3 data-i18n="k21">Motociclos</h3><p data-i18n="k22">Categorias A1, A2 e A, de 125 cc até motos sem limite de potência.</p><span class="age" data-i18n="k23">A partir dos 16 anos</span></div></article>
+      <article class="cat"><div class="ph"><img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=700&q=75" alt=""></div><div class="cat-body"><span class="code">AM</span><h3 data-i18n="k24">Ciclomotores</h3><p data-i18n="k25">Scooters e ciclomotores até 50 cc, ideais para a cidade.</p><span class="age" data-i18n="k23">A partir dos 16 anos</span></div></article>
+      <article class="cat"><div class="ph"><img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=700&q=75" alt=""></div><div class="cat-body"><span class="code">C</span><h3 data-i18n="k26">Pesados de mercadorias</h3><p data-i18n="k27">Camiões acima de 3500 kg, com formação para motoristas profissionais.</p><span class="age" data-i18n="k28">A partir dos 21 anos</span></div></article>
+      <article class="cat"><div class="ph"><img src="https://images.unsplash.com/photo-1586191582151-f73872dfd183?auto=format&fit=crop&w=700&q=75" alt=""></div><div class="cat-body"><span class="code">CE</span><h3 data-i18n="k29">Pesados com reboque</h3><p data-i18n="k30">Conjuntos articulados e camiões com reboque pesado.</p><span class="age" data-i18n="k28">A partir dos 21 anos</span></div></article>
+      <article class="cat"><div class="ph"><img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=700&q=75" alt=""></div><div class="cat-body"><span class="code">D</span><h3 data-i18n="k31">Pesados de passageiros</h3><p data-i18n="k32">Autocarros e veículos com mais de 9 lugares.</p><span class="age" data-i18n="k33">A partir dos 24 anos</span></div></article>
+      <article class="cat"><div class="ph"><img src="https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=700&q=75" alt=""></div><div class="cat-body"><span class="code">+</span><h3 data-i18n="k34">Aulas de reciclagem</h3><p data-i18n="k35">Para quem já tem carta e quer voltar a conduzir com confiança.</p><span class="age" data-i18n="k36">Para condutores encartados</span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- FROTA -->
+<section class="light" id="frota">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="k2">Frota</span>
+      <h2 data-i18n="k37">Viaturas recentes, <em>sempre impecáveis</em></h2>
+      <p data-i18n="k38">Aprenda em carros e motos modernos, revistos todos os meses, com duplos comandos e seguro completo.</p>
+    </div>
+    <div class="fleet">
+      <div class="car reveal"><div class="ph"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=75" alt=""></div><h3 data-i18n="k39">Ligeiro manual</h3><p data-i18n="k40">Caixa manual de 6 velocidades, sensores de estacionamento e duplos comandos.</p></div>
+      <div class="car reveal"><div class="ph"><img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=800&q=75" alt=""></div><h3 data-i18n="k41">Ligeiro automático</h3><p data-i18n="k42">Caixa automática, ideal para quem prefere conduzir sem embraiagem.</p></div>
+      <div class="car reveal"><div class="ph"><img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=75" alt=""></div><h3 data-i18n="k21">Motociclos</h3><p data-i18n="k43">Motos de 125 cc a 650 cc, com equipamento de proteção incluído nas aulas.</p></div>
+      <div class="car reveal"><div class="ph"><img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=75" alt=""></div><h3 data-i18n="k44">Pesados</h3><p data-i18n="k45">Camião e autocarro de ensino, com instrutores com experiência profissional.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section id="como">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="k3">Como funciona</span>
+      <h2 data-i18n="k46">Cinco passos <em>até à sua carta</em></h2>
+      <p data-i18n="k47">Tratamos de toda a burocracia e acompanhamos cada etapa. Só tem de se concentrar em aprender.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">01</div><h3 data-i18n="k48">Inscrição</h3><p data-i18n="k49">Traga o documento de identificação e o atestado médico. Tratamos do resto.</p></div>
+      <div class="step reveal"><div class="n">02</div><h3 data-i18n="k50">Aulas de código</h3><p data-i18n="k51">Aulas presenciais ou online e testes de treino ilimitados na nossa plataforma.</p></div>
+      <div class="step reveal"><div class="n">03</div><h3 data-i18n="k52">Exame de código</h3><p data-i18n="k53">Marcamos o exame quando estiver preparado, com simulações iguais às reais.</p></div>
+      <div class="step reveal"><div class="n">04</div><h3 data-i18n="k54">Aulas de condução</h3><p data-i18n="k55">Em cidade, autoestrada e de noite, ao seu ritmo e com o mesmo instrutor.</p></div>
+      <div class="step reveal"><div class="n">05</div><h3 data-i18n="k56">Exame de condução</h3><p data-i18n="k57">Acompanhamos o exame e, no fim, sai com a carta na mão.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PORQUÊ NÓS -->
+<section class="light why">
+  <div class="container why-grid">
+    <div class="ph why-img reveal"><img src="https://images.unsplash.com/photo-1469285994282-454ceb49e63c?auto=format&fit=crop&w=1100&q=75" alt=""></div>
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="k58">Porquê a Rota Certa</span>
+      <h2 data-i18n="k59">Formação séria, <em>condutores seguros</em></h2>
+      <p data-i18n="k60">Ensinamos mais do que passar no exame: ensinamos a conduzir com técnica, antecipação e segurança para toda a vida.</p>
+      <div class="feats">
+        <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3 data-i18n="k61">Instrutores certificados</h3><p data-i18n="k62">Pacientes, experientes e sempre o mesmo instrutor do início ao fim.</p></div>
+        <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M3.5 10.5Q12 7 20.5 10.5M12 14.5V21M9.8 13.5L5 18.5M14.2 13.5L19 18.5"/></svg></div><h3 data-i18n="k63">Carros recentes</h3><p data-i18n="k64">Caixa manual ou automática, com ar condicionado e duplos comandos.</p></div>
+        <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2"/><path d="M10 18.5h4"/></svg></div><h3 data-i18n="k65">Código no telemóvel</h3><p data-i18n="k66">Milhares de perguntas de treino, disponíveis a qualquer hora.</p></div>
+        <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="1.5"/><path d="M3 10h18M7 15h4"/></svg></div><h3 data-i18n="k67">Pagamento faseado</h3><p data-i18n="k68">Divida o valor em prestações mensais, sem juros.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTE DE CÓDIGO -->
+<section class="graphite" id="teste">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" data-i18n="k69">Teste de código</span>
+      <h2 data-i18n="k70">Está preparado <em>para o código?</em></h2>
+      <p data-i18n="k71">Responda a três perguntas rápidas e veja como se sai.</p>
+    </div>
+    <div class="quiz-grid">
+      <div class="q reveal">
+        <svg viewBox="0 0 100 100"><polygon points="30,4 70,4 96,30 96,70 70,96 30,96 4,70 4,30" fill="#d7261e" stroke="#fff" stroke-width="3"/><text x="50" y="58" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="22" fill="#fff">STOP</text></svg>
+        <h3 data-i18n="k72">O que significa este sinal?</h3>
+        <div class="opts"><button type="button" data-i18n="k73">Proibido estacionar</button><button type="button" data-ok data-i18n="k74">Paragem obrigatória</button><button type="button" data-i18n="k75">Fim de prioridade</button></div>
+        <div class="fb"><span class="y" data-i18n="k76">Certo!</span><span class="x" data-i18n="k77">Não é bem assim.</span></div>
+      </div>
+      <div class="q reveal">
+        <svg viewBox="0 0 100 100"><polygon points="4,8 96,8 50,92" fill="#fff" stroke="#d7261e" stroke-width="9" stroke-linejoin="round"/></svg>
+        <h3 data-i18n="k72">O que significa este sinal?</h3>
+        <div class="opts"><button type="button" data-ok data-i18n="k78">Cedência de passagem</button><button type="button" data-i18n="k79">Estrada com prioridade</button><button type="button" data-i18n="k80">Perigo de derrocada</button></div>
+        <div class="fb"><span class="y" data-i18n="k76">Certo!</span><span class="x" data-i18n="k77">Não é bem assim.</span></div>
+      </div>
+      <div class="q reveal">
+        <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="#fff" stroke="#d7261e" stroke-width="10"/><text x="50" y="63" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="36" fill="#111">50</text></svg>
+        <h3 data-i18n="k72">O que significa este sinal?</h3>
+        <div class="opts"><button type="button" data-i18n="k81">Velocidade mínima de 50 km/h</button><button type="button" data-i18n="k82">Distância mínima de 50 metros</button><button type="button" data-ok data-i18n="k83">Velocidade máxima de 50 km/h</button></div>
+        <div class="fb"><span class="y" data-i18n="k76">Certo!</span><span class="x" data-i18n="k77">Não é bem assim.</span></div>
+      </div>
+    </div>
+    <p class="score reveal"><span data-i18n="k84">Respostas certas:</span> <b id="score">0</b>/3</p>
+  </div>
+</section>
+
+<!-- PREÇOS -->
+<section class="light" id="precos">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" data-i18n="k4">Preços</span>
+      <h2 data-i18n="k85">Carta de ligeiros, <em>preço fechado</em></h2>
+      <p data-i18n="k86">Sem custos escondidos. Pode pagar em prestações mensais sem juros.</p>
+    </div>
+    <div class="plan-grid">
+      <div class="plan reveal">
+        <h3 data-i18n="k87">Só código</h3><p class="for" data-i18n="k88">Para quem quer começar pela teoria</p>
+        <div class="price">150 €</div><span class="pp" data-i18n="k89">pacote</span>
+        <ul><li data-i18n="k90">Aulas teóricas presenciais ou online</li><li data-i18n="k91">Plataforma de treino ilimitada</li><li data-i18n="k92">Inscrição e documentação</li><li data-i18n="k93">Marcação do exame</li></ul>
+        <a href="#contactos" class="btn btn-outline" data-i18n="k6">Inscrever-me</a>
+      </div>
+      <div class="plan featured reveal">
+        <span class="badge" data-i18n="k94">Mais escolhido</span>
+        <h3 data-i18n="k95">Carta B completa</h3><p class="for" data-i18n="k96">Código e condução, caixa manual</p>
+        <div class="price">790 €</div><span class="pp" data-i18n="k89">pacote</span>
+        <ul><li data-i18n="k97">Tudo o que inclui o pacote de código</li><li data-i18n="k98">32 aulas de condução</li><li data-i18n="k99">Aula de autoestrada e de noite</li><li data-i18n="k100">Acompanhamento nos dois exames</li></ul>
+        <a href="#contactos" class="btn btn-white" data-i18n="k6">Inscrever-me</a>
+      </div>
+      <div class="plan reveal">
+        <h3 data-i18n="k101">Carta B automática</h3><p class="for" data-i18n="k102">Código e condução, caixa automática</p>
+        <div class="price">890 €</div><span class="pp" data-i18n="k89">pacote</span>
+        <ul><li data-i18n="k97">Tudo o que inclui o pacote de código</li><li data-i18n="k98">32 aulas de condução</li><li data-i18n="k103">Carro automático recente</li><li data-i18n="k100">Acompanhamento nos dois exames</li></ul>
+        <a href="#contactos" class="btn btn-outline" data-i18n="k6">Inscrever-me</a>
+      </div>
+    </div>
+    <p class="plans-note" data-i18n="k104">Aulas extra a 30 € cada. As taxas oficiais de exame não estão incluídas. Preços para motociclos e pesados sob consulta.</p>
+  </div>
+</section>
+
+<!-- OPINIÕES -->
+<section class="graphite">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" data-i18n="k105">Opiniões</span>
+      <h2 data-i18n="k106">Alunos que já <em>andam na estrada</em></h2>
+    </div>
+    <div class="r-grid">
+      <div class="review reveal"><div class="stars">★★★★★</div><p data-i18n="k107">“Tirei a carta de pesados para mudar de profissão. Formação séria e instrutores muito experientes.”</p><strong>Paulo M.</strong><small data-i18n="k108">Carta C</small></div>
+      <div class="review reveal"><div class="stars">★★★★★</div><p data-i18n="k109">“Estudei o código no telemóvel nos intervalos do trabalho. Muito prático e bem organizado.”</p><strong>Ricardo T.</strong><small data-i18n="k101">Carta B automática</small></div>
+      <div class="review reveal"><div class="stars">★★★★★</div><p data-i18n="k110">“Tinha muito medo de conduzir e o instrutor foi sempre paciente. Passei à primeira nos dois exames!”</p><strong>Mariana S.</strong><small data-i18n="k111">Carta B · 19 anos</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="light">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" data-i18n="k112">Perguntas frequentes</span>
+      <h2 data-i18n="k113">Tem dúvidas?</h2>
+    </div>
+    <div class="faq reveal">
+      <details open><summary data-i18n="k114">Quanto tempo demora a tirar a carta?</summary><p data-i18n="k115">Em média, entre 2 e 4 meses. Depende da sua disponibilidade para as aulas e das datas de exame disponíveis.</p></details>
+      <details><summary data-i18n="k116">Que documentos preciso para me inscrever?</summary><p data-i18n="k117">Documento de identificação, número de contribuinte e atestado médico. Se precisar, indicamos onde o pode obter.</p></details>
+      <details><summary data-i18n="k118">Posso escolher os horários das aulas?</summary><p data-i18n="k119">Sim. Temos aulas de manhã, à tarde, à noite e ao sábado, e marca as aulas de condução diretamente com o seu instrutor.</p></details>
+      <details><summary data-i18n="k120">E se chumbar no exame?</summary><p data-i18n="k121">Não há problema. Analisamos o que correu mal, fazemos as aulas de preparação necessárias e marcamos novo exame.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contact" id="contactos">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="k5">Contactos</span>
+      <h2 data-i18n="k122">Comece hoje a tirar a carta</h2>
+      <p data-i18n="k123">Diga-nos que categoria quer tirar e o melhor horário para si. Respondemos no mesmo dia com todas as informações.</p>
+      <div class="c-line"><strong data-i18n="k124">Morada</strong><span>Rua da Sofia, 120<br>3000-389 Coimbra</span></div>
+      <div class="c-line"><strong data-i18n="k125">Telefone</strong><span>+351 239 123 456 · +351 912 345 678</span></div>
+      <div class="c-line"><strong>Email</strong><span>geral@rotacerta.pt</span></div>
+      <div class="c-line"><strong data-i18n="k126">Horário</strong><span data-i18n="k127">Segunda a sexta, 9h–20h · Sábado, 9h–13h</span></div>
+    </div>
+    <form class="form reveal" id="signupForm">
+      <h3 data-i18n="k128">Pedido de inscrição</h3>
+      <div class="fields">
+        <div class="field"><label for="f-name" data-i18n="k129">Nome</label><input id="f-name" required autocomplete="name"></div>
+        <div class="field"><label for="f-cat" data-i18n="k130">Categoria</label>
+          <select id="f-cat">
+            <option value="B — Ligeiros" data-i18n="k131">B — Ligeiros</option>
+            <option value="BE — Ligeiros com reboque" data-i18n="k132">BE — Ligeiros com reboque</option>
+            <option value="A — Motociclos" data-i18n="k133">A — Motociclos</option>
+            <option value="AM — Ciclomotores" data-i18n="k134">AM — Ciclomotores</option>
+            <option value="C — Pesados de mercadorias" data-i18n="k135">C — Pesados de mercadorias</option>
+            <option value="CE — Pesados com reboque" data-i18n="k136">CE — Pesados com reboque</option>
+            <option value="D — Pesados de passageiros" data-i18n="k137">D — Pesados de passageiros</option>
+            <option value="Aulas de reciclagem" data-i18n="k34">Aulas de reciclagem</option>
+          </select></div>
+        <div class="field"><label for="f-gear" data-i18n="k138">Caixa de velocidades</label>
+          <select id="f-gear"><option value="Manual" data-i18n="k139">Manual</option><option value="Automática" data-i18n="k140">Automática</option></select></div>
+        <div class="field"><label for="f-time" data-i18n="k141">Horário preferido</label>
+          <select id="f-time"><option value="Manhã" data-i18n="k142">Manhã</option><option value="Tarde" data-i18n="k143">Tarde</option><option value="Noite" data-i18n="k144">Noite</option><option value="Sábado" data-i18n="k145">Sábado</option></select></div>
+        <div class="field full"><label for="f-code" data-i18n="k146">Já tem o exame de código?</label>
+          <select id="f-code"><option value="Ainda não" data-i18n="k147">Ainda não</option><option value="Sim, já tenho o código" data-i18n="k148">Sim, já tenho o código</option></select></div>
+        <div class="field full"><label for="f-msg" data-i18n="k149">Mensagem (opcional)</label><textarea id="f-msg"></textarea></div>
+      </div>
+      <button type="submit" class="btn btn-wa" data-i18n="k150">💬 Inscrever-me por WhatsApp</button>
+      <p class="form-note" data-i18n="k151">Os seus dados são usados apenas para responder ao seu pedido.</p>
+    </form>
+  </div>
+</section>
+
+<div class="map"><iframe src="https://www.google.com/maps?q=Coimbra&output=embed" loading="lazy" title="Mapa"></iframe></div>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div><a href="#inicio" class="logo"><span class="mark"><svg viewBox="0 0 50 50"><path d="M25 2 L45 13.5 V36.5 L25 48 L5 36.5 V13.5 Z" fill="none" stroke="#c3c8ce" stroke-width="1.6"/><path d="M25 7 L40.6 16 V34 L25 43 L9.4 34 V16 Z" fill="none" stroke="#c8102e" stroke-width="1"/><text x="25" y="31.5" text-anchor="middle" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="700" font-size="17" letter-spacing="1" fill="#fff">RC</text></svg></span><span><strong>ROTA CERTA</strong><small data-i18n="k0">Escola de Condução</small></span></a><p data-i18n="k152">Escola de condução em Coimbra. Cartas de ligeiros, motociclos e pesados, com instrutores certificados e carros recentes.</p></div>
+      <div><h4 data-i18n="k153">Navegação</h4><ul><li><a href="#categorias" data-i18n="k1">Categorias</a></li><li><a href="#frota" data-i18n="k2">Frota</a></li><li><a href="#precos" data-i18n="k4">Preços</a></li><li><a href="#contactos" data-i18n="k5">Contactos</a></li></ul></div>
+      <div><h4 data-i18n="k154">Siga-nos</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">YouTube</a></li></ul></div>
+    </div>
+    <div class="legal">© <span id="y"></span> Rota Certa · <span data-i18n="k155">Todos os direitos reservados</span></div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/351912345678" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
+<script>
+  const header=document.getElementById('header');
+  const onScroll=()=>header.classList.toggle('scrolled',scrollY>60);
+  addEventListener('scroll',onScroll);onScroll();
+  document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('.ph img').forEach(img=>{
+    const hide=()=>img.style.visibility='hidden';
+    if(img.complete&&img.naturalWidth===0)hide();else img.addEventListener('error',hide);
+  });
+
+  const noIntro=document.documentElement.classList.contains('no-intro');
+  setTimeout(()=>{const i=document.querySelector('.intro');if(i)i.remove()},4000);
+
+  // Fotografias de fundo a trocar
+  const slides=[...document.querySelectorAll('.slide')];let cur=0;
+  setTimeout(function next(){slides[cur].classList.remove('on');cur=(cur+1)%slides.length;slides[cur].classList.add('on');setTimeout(next,6000)},noIntro?6000:8800);
+
+  // Números a contar
+  setTimeout(()=>{
+    document.querySelectorAll('[data-count]').forEach(el=>{
+      const end=+el.dataset.count,t0=performance.now(),dur=1600;
+      const step=t=>{const k=Math.min((t-t0)/dur,1);el.textContent=Math.round(end*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(step)};
+      el.textContent='0';requestAnimationFrame(step);
+    });
+  },noIntro?1300:4500);
+
+  // Teste de código
+  let score=0;
+  document.querySelectorAll('.q').forEach(q=>{
+    q.querySelectorAll('.opts button').forEach(b=>b.addEventListener('click',()=>{
+      if(q.classList.contains('done'))return;
+      q.classList.add('done');
+      const right=b.hasAttribute('data-ok');
+      q.querySelector('[data-ok]').classList.add('ok');
+      if(!right)b.classList.add('no');else score++;
+      q.classList.add(right?'right':'wrong');
+      document.getElementById('score').textContent=score;
+    }));
+  });
+
+  // Inscrição: abre o WhatsApp com a mensagem já escrita (sempre em português)
+  document.getElementById('signupForm').addEventListener('submit',e=>{
+    e.preventDefault();
+    const v=id=>document.getElementById(id).value.trim();
+    let msg=`Olá! Gostaria de me inscrever na escola de condução.\nNome: ${v('f-name')}\nCategoria: ${v('f-cat')}\nCaixa: ${v('f-gear')}\nHorário preferido: ${v('f-time')}\nExame de código: ${v('f-code')}`;
+    if(v('f-msg'))msg+=`\nMensagem: ${v('f-msg')}`;
+    window.open('https://wa.me/351912345678?text='+encodeURIComponent(msg),'_blank');
+  });
+
+  document.getElementById('y').textContent=new Date().getFullYear();
+
+  // ---------- IDIOMAS ----------
+  const I18N = {"en": {"k0": "Driving School", "k1": "Licence categories", "k2": "Fleet", "k3": "How it works", "k4": "Prices", "k5": "Contact", "k6": "Sign up", "k7": "Driving school · Coimbra", "k8": "Take <em>control.</em>", "k9": "Theory and driving lessons with patient instructors, recent cars and schedules that suit you. From your first lesson to exam day.", "k10": "See categories", "k11": "First-time pass rate", "k12": "Years of experience", "k13": "Training vehicles", "k14": "A licence for <em>every road</em>", "k15": "We teach every category, from mopeds to heavy vehicles, with vehicles suited to each one.", "k16": "Cars", "k17": "The most popular licence: vehicles up to 3,500 kg and 9 seats.", "k18": "From age 18", "k19": "Cars with trailer", "k20": "To drive with a trailer, caravan or boat trailer.", "k21": "Motorcycles", "k22": "Categories A1, A2 and A, from 125 cc to motorcycles with no power limit.", "k23": "From age 16", "k24": "Mopeds", "k25": "Scooters and mopeds up to 50 cc, ideal for the city.", "k26": "Heavy goods vehicles", "k27": "Lorries over 3,500 kg, with training for professional drivers.", "k28": "From age 21", "k29": "Heavy vehicles with trailer", "k30": "Articulated vehicles and lorries with heavy trailers.", "k31": "Buses and coaches", "k32": "Buses and vehicles with more than 9 seats.", "k33": "From age 24", "k34": "Refresher lessons", "k35": "For licence holders who want to get back behind the wheel with confidence.", "k36": "For licensed drivers", "k37": "Recent vehicles, <em>always spotless</em>", "k38": "Learn in modern cars and motorcycles, serviced every month, with dual controls and full insurance.", "k39": "Manual car", "k40": "6-speed manual gearbox, parking sensors and dual controls.", "k41": "Automatic car", "k42": "Automatic gearbox, ideal if you prefer to drive without a clutch.", "k43": "Motorcycles from 125 cc to 650 cc, with protective gear included in lessons.", "k44": "Heavy vehicles", "k45": "Training lorry and bus, with instructors who have professional driving experience.", "k46": "Five steps <em>to your licence</em>", "k47": "We handle all the paperwork and support you at every stage. You just need to focus on learning.", "k48": "Enrolment", "k49": "Bring your ID and a medical certificate. We take care of the rest.", "k50": "Theory lessons", "k51": "In-person or online lessons and unlimited practice tests on our platform.", "k52": "Theory exam", "k53": "We book the exam when you're ready, with mock tests just like the real thing.", "k54": "Driving lessons", "k55": "In town, on the motorway and at night, at your own pace and with the same instructor.", "k56": "Driving test", "k57": "We accompany you to the test and you leave with your licence in hand.", "k58": "Why Rota Certa", "k59": "Serious training, <em>safe drivers</em>", "k60": "We teach more than how to pass the exam: we teach you to drive with technique, anticipation and safety for life.", "k61": "Certified instructors", "k62": "Patient, experienced, and the same instructor from start to finish.", "k63": "Recent cars", "k64": "Manual or automatic, with air conditioning and dual controls.", "k65": "Theory on your phone", "k66": "Thousands of practice questions, available at any time.", "k67": "Pay in instalments", "k68": "Split the cost into interest-free monthly payments.", "k69": "Theory quiz", "k70": "Ready <em>for the theory test?</em>", "k71": "Answer three quick questions and see how you do.", "k72": "What does this sign mean?", "k73": "No parking", "k74": "Mandatory stop", "k75": "End of priority", "k76": "Correct!", "k77": "Not quite.", "k78": "Give way", "k79": "Priority road", "k80": "Falling rocks", "k81": "Minimum speed 50 km/h", "k82": "Minimum distance 50 metres", "k83": "Maximum speed 50 km/h", "k84": "Correct answers:", "k85": "Car licence, <em>fixed price</em>", "k86": "No hidden costs. You can pay in interest-free monthly instalments.", "k87": "Theory only", "k88": "For those who want to start with the theory", "k89": "package", "k90": "In-person or online theory lessons", "k91": "Unlimited practice platform", "k92": "Enrolment and paperwork", "k93": "Exam booking", "k94": "Most popular", "k95": "Full B licence", "k96": "Theory and driving, manual gearbox", "k97": "Everything in the theory package", "k98": "32 driving lessons", "k99": "Motorway and night-driving lesson", "k100": "Support at both exams", "k101": "Automatic B licence", "k102": "Theory and driving, automatic gearbox", "k103": "Recent automatic car", "k104": "Extra lessons €30 each. Official exam fees are not included. Prices for motorcycles and heavy vehicles on request.", "k105": "Reviews", "k106": "Students already <em>on the road</em>", "k107": "“I got my HGV licence to change careers. Serious training and very experienced instructors.”", "k108": "C licence", "k109": "“I studied for the theory test on my phone during work breaks. Very practical and well organised.”", "k110": "“I was really scared of driving and my instructor was always patient. I passed both exams first time!”", "k111": "B licence · 19 years old", "k112": "FAQ", "k113": "Any questions?", "k114": "How long does it take to get a licence?", "k115": "On average, 2 to 4 months. It depends on your availability for lessons and on the exam dates available.", "k116": "What documents do I need to enrol?", "k117": "ID, tax number and a medical certificate. If needed, we can tell you where to get one.", "k118": "Can I choose my lesson times?", "k119": "Yes. We have lessons in the morning, afternoon, evening and on Saturdays, and you book your driving lessons directly with your instructor.", "k120": "What if I fail the exam?", "k121": "No problem. We look at what went wrong, do the extra preparation lessons needed and book a new exam.", "k122": "Start getting your licence today", "k123": "Tell us which category you want and the best time for you. We'll reply the same day with all the information.", "k124": "Address", "k125": "Phone", "k126": "Opening hours", "k127": "Monday to Friday, 9am–8pm · Saturday, 9am–1pm", "k128": "Enrolment request", "k129": "Name", "k130": "Category", "k131": "B — Cars", "k132": "BE — Cars with trailer", "k133": "A — Motorcycles", "k134": "AM — Mopeds", "k135": "C — Heavy goods vehicles", "k136": "CE — Heavy vehicles with trailer", "k137": "D — Buses and coaches", "k138": "Gearbox", "k139": "Manual", "k140": "Automatic", "k141": "Preferred time", "k142": "Morning", "k143": "Afternoon", "k144": "Evening", "k145": "Saturday", "k146": "Have you passed the theory exam?", "k147": "Not yet", "k148": "Yes, I already have it", "k149": "Message (optional)", "k150": "💬 Sign up via WhatsApp", "k151": "Your details are used only to reply to your request.", "k152": "Driving school in Coimbra. Car, motorcycle and heavy vehicle licences, with certified instructors and recent cars.", "k153": "Navigation", "k154": "Follow us", "k155": "All rights reserved"}, "es": {"k0": "Autoescuela", "k1": "Permisos", "k2": "Flota", "k3": "Cómo funciona", "k4": "Precios", "k5": "Contacto", "k6": "Inscribirme", "k7": "Autoescuela · Coímbra", "k8": "Toma <em>el control.</em>", "k9": "Clases teóricas y prácticas con profesores pacientes, coches recientes y horarios a tu medida. De la primera clase al día del examen.", "k10": "Ver permisos", "k11": "Aprobados a la primera", "k12": "Años de experiencia", "k13": "Vehículos de prácticas", "k14": "Un permiso para <em>cada carretera</em>", "k15": "Enseñamos todos los permisos, de ciclomotores a camiones, con vehículos adaptados a cada uno.", "k16": "Turismos", "k17": "El permiso más solicitado: vehículos de hasta 3500 kg y 9 plazas.", "k18": "Desde los 18 años", "k19": "Turismos con remolque", "k20": "Para conducir con remolque, caravana o remolque de barco.", "k21": "Motocicletas", "k22": "Permisos A1, A2 y A, de 125 cc a motos sin límite de potencia.", "k23": "Desde los 16 años", "k24": "Ciclomotores", "k25": "Scooters y ciclomotores de hasta 50 cc, ideales para la ciudad.", "k26": "Camiones", "k27": "Camiones de más de 3500 kg, con formación para conductores profesionales.", "k28": "Desde los 21 años", "k29": "Camiones con remolque", "k30": "Vehículos articulados y camiones con remolque pesado.", "k31": "Autobuses", "k32": "Autobuses y vehículos de más de 9 plazas.", "k33": "Desde los 24 años", "k34": "Clases de reciclaje", "k35": "Para quien ya tiene carnet y quiere volver a conducir con confianza.", "k36": "Para conductores con carnet", "k37": "Vehículos recientes, <em>siempre impecables</em>", "k38": "Aprende en coches y motos modernos, revisados cada mes, con doble mando y seguro a todo riesgo.", "k39": "Turismo manual", "k40": "Cambio manual de 6 velocidades, sensores de aparcamiento y doble mando.", "k41": "Turismo automático", "k42": "Cambio automático, ideal para quien prefiere conducir sin embrague.", "k43": "Motos de 125 cc a 650 cc, con equipo de protección incluido en las clases.", "k44": "Vehículos pesados", "k45": "Camión y autobús de prácticas, con profesores con experiencia profesional.", "k46": "Cinco pasos <em>hasta tu carnet</em>", "k47": "Nos ocupamos de todo el papeleo y te acompañamos en cada etapa. Solo tienes que concentrarte en aprender.", "k48": "Inscripción", "k49": "Trae tu documento de identidad y el certificado médico. Nosotros nos encargamos del resto.", "k50": "Clases de teórico", "k51": "Clases presenciales u online y tests de práctica ilimitados en nuestra plataforma.", "k52": "Examen teórico", "k53": "Reservamos el examen cuando estés preparado, con simulacros iguales a los reales.", "k54": "Clases prácticas", "k55": "En ciudad, autopista y de noche, a tu ritmo y con el mismo profesor.", "k56": "Examen práctico", "k57": "Te acompañamos al examen y, al final, sales con el carnet en la mano.", "k58": "Por qué Rota Certa", "k59": "Formación seria, <em>conductores seguros</em>", "k60": "Enseñamos algo más que aprobar el examen: enseñamos a conducir con técnica, anticipación y seguridad para toda la vida.", "k61": "Profesores titulados", "k62": "Pacientes, con experiencia y siempre el mismo profesor de principio a fin.", "k63": "Coches recientes", "k64": "Cambio manual o automático, con aire acondicionado y doble mando.", "k65": "Teórico en el móvil", "k66": "Miles de preguntas de práctica, disponibles a cualquier hora.", "k67": "Pago a plazos", "k68": "Divide el importe en cuotas mensuales sin intereses.", "k69": "Test de teórico", "k70": "¿Estás preparado <em>para el teórico?</em>", "k71": "Responde a tres preguntas rápidas y descubre qué tal lo haces.", "k72": "¿Qué significa esta señal?", "k73": "Prohibido estacionar", "k74": "Detención obligatoria", "k75": "Fin de prioridad", "k76": "¡Correcto!", "k77": "No exactamente.", "k78": "Ceda el paso", "k79": "Calzada con prioridad", "k80": "Desprendimientos", "k81": "Velocidad mínima de 50 km/h", "k82": "Distancia mínima de 50 metros", "k83": "Velocidad máxima de 50 km/h", "k84": "Respuestas correctas:", "k85": "Carnet de coche, <em>precio cerrado</em>", "k86": "Sin costes ocultos. Puedes pagar en cuotas mensuales sin intereses.", "k87": "Solo teórico", "k88": "Para quien quiere empezar por la teoría", "k89": "paquete", "k90": "Clases teóricas presenciales u online", "k91": "Plataforma de práctica ilimitada", "k92": "Inscripción y documentación", "k93": "Reserva del examen", "k94": "El más elegido", "k95": "Carnet B completo", "k96": "Teórico y práctico, cambio manual", "k97": "Todo lo que incluye el paquete de teórico", "k98": "32 clases prácticas", "k99": "Clase de autopista y nocturna", "k100": "Acompañamiento en los dos exámenes", "k101": "Carnet B automático", "k102": "Teórico y práctico, cambio automático", "k103": "Coche automático reciente", "k104": "Clases extra a 30 € cada una. Las tasas oficiales de examen no están incluidas. Precios de motos y camiones bajo consulta.", "k105": "Opiniones", "k106": "Alumnos que ya <em>están en la carretera</em>", "k107": "“Me saqué el carnet de camión para cambiar de profesión. Formación seria y profesores con mucha experiencia.”", "k108": "Carnet C", "k109": "“Estudié el teórico en el móvil en los descansos del trabajo. Muy práctico y bien organizado.”", "k110": "“Tenía mucho miedo de conducir y el profesor fue siempre paciente. ¡Aprobé los dos exámenes a la primera!”", "k111": "Carnet B · 19 años", "k112": "Preguntas frecuentes", "k113": "¿Tienes dudas?", "k114": "¿Cuánto se tarda en sacar el carnet?", "k115": "De media, entre 2 y 4 meses. Depende de tu disponibilidad para las clases y de las fechas de examen disponibles.", "k116": "¿Qué documentos necesito para inscribirme?", "k117": "Documento de identidad, número fiscal y certificado médico. Si lo necesitas, te indicamos dónde obtenerlo.", "k118": "¿Puedo elegir el horario de las clases?", "k119": "Sí. Tenemos clases por la mañana, por la tarde, por la noche y los sábados, y reservas las prácticas directamente con tu profesor.", "k120": "¿Y si suspendo el examen?", "k121": "No pasa nada. Analizamos qué ha fallado, hacemos las clases de preparación necesarias y reservamos un nuevo examen.", "k122": "Empieza hoy a sacarte el carnet", "k123": "Dinos qué permiso quieres sacar y el mejor horario para ti. Te respondemos el mismo día con toda la información.", "k124": "Dirección", "k125": "Teléfono", "k126": "Horario", "k127": "Lunes a viernes, 9:00–20:00 · Sábado, 9:00–13:00", "k128": "Solicitud de inscripción", "k129": "Nombre", "k130": "Permiso", "k131": "B — Turismos", "k132": "BE — Turismos con remolque", "k133": "A — Motocicletas", "k134": "AM — Ciclomotores", "k135": "C — Camiones", "k136": "CE — Camiones con remolque", "k137": "D — Autobuses", "k138": "Caja de cambios", "k139": "Manual", "k140": "Automática", "k141": "Horario preferido", "k142": "Mañana", "k143": "Tarde", "k144": "Noche", "k145": "Sábado", "k146": "¿Ya has aprobado el teórico?", "k147": "Todavía no", "k148": "Sí, ya lo tengo", "k149": "Mensaje (opcional)", "k150": "💬 Inscribirme por WhatsApp", "k151": "Tus datos se usan solo para responder a tu solicitud.", "k152": "Autoescuela en Coímbra. Permisos de coche, moto y camión, con profesores titulados y coches recientes.", "k153": "Navegación", "k154": "Síguenos", "k155": "Todos los derechos reservados"}, "fr": {"k0": "Auto-école", "k1": "Catégories", "k2": "Flotte", "k3": "Comment ça marche", "k4": "Tarifs", "k5": "Contact", "k6": "M'inscrire", "k7": "Auto-école · Coimbra", "k8": "Prenez <em>le contrôle.</em>", "k9": "Cours de code et de conduite avec des moniteurs patients, des voitures récentes et des horaires adaptés. Du premier cours au jour de l'examen.", "k10": "Voir les catégories", "k11": "Réussite du premier coup", "k12": "Ans d'expérience", "k13": "Véhicules-école", "k14": "Un permis pour <em>chaque route</em>", "k15": "Nous enseignons toutes les catégories, du cyclomoteur au poids lourd, avec des véhicules adaptés à chacune.", "k16": "Voitures", "k17": "Le permis le plus demandé : véhicules jusqu'à 3 500 kg et 9 places.", "k18": "Dès 18 ans", "k19": "Voitures avec remorque", "k20": "Pour conduire avec une remorque, une caravane ou un porte-bateau.", "k21": "Motos", "k22": "Catégories A1, A2 et A, de 125 cm³ aux motos sans limite de puissance.", "k23": "Dès 16 ans", "k24": "Cyclomoteurs", "k25": "Scooters et cyclomoteurs jusqu'à 50 cm³, idéaux pour la ville.", "k26": "Poids lourds", "k27": "Camions de plus de 3 500 kg, avec formation pour chauffeurs professionnels.", "k28": "Dès 21 ans", "k29": "Poids lourds avec remorque", "k30": "Ensembles articulés et camions avec remorque lourde.", "k31": "Transport de passagers", "k32": "Autocars et véhicules de plus de 9 places.", "k33": "Dès 24 ans", "k34": "Cours de remise à niveau", "k35": "Pour ceux qui ont déjà le permis et veulent reprendre le volant en confiance.", "k36": "Pour conducteurs titulaires du permis", "k37": "Des véhicules récents, <em>toujours impeccables</em>", "k38": "Apprenez sur des voitures et motos modernes, révisées chaque mois, avec double commande et assurance tous risques.", "k39": "Voiture manuelle", "k40": "Boîte manuelle 6 vitesses, radars de stationnement et double commande.", "k41": "Voiture automatique", "k42": "Boîte automatique, idéale si vous préférez conduire sans embrayage.", "k43": "Motos de 125 à 650 cm³, équipement de protection inclus pendant les leçons.", "k44": "Poids lourds", "k45": "Camion et autocar école, avec des moniteurs ayant une expérience professionnelle.", "k46": "Cinq étapes <em>jusqu'au permis</em>", "k47": "Nous nous occupons de toutes les démarches et vous accompagnons à chaque étape. Concentrez-vous simplement sur l'apprentissage.", "k48": "Inscription", "k49": "Apportez votre pièce d'identité et un certificat médical. Nous nous occupons du reste.", "k50": "Cours de code", "k51": "Cours en salle ou en ligne et tests d'entraînement illimités sur notre plateforme.", "k52": "Examen du code", "k53": "Nous réservons l'examen quand vous êtes prêt, avec des simulations identiques aux vraies.", "k54": "Leçons de conduite", "k55": "En ville, sur autoroute et de nuit, à votre rythme et avec le même moniteur.", "k56": "Examen de conduite", "k57": "Nous vous accompagnons à l'examen et vous repartez avec votre permis en main.", "k58": "Pourquoi Rota Certa", "k59": "Une formation sérieuse, <em>des conducteurs sûrs</em>", "k60": "Nous enseignons plus que la réussite à l'examen : nous apprenons à conduire avec technique, anticipation et sécurité pour la vie.", "k61": "Moniteurs diplômés", "k62": "Patients, expérimentés et le même moniteur du début à la fin.", "k63": "Voitures récentes", "k64": "Boîte manuelle ou automatique, avec climatisation et double commande.", "k65": "Le code sur votre téléphone", "k66": "Des milliers de questions d'entraînement, disponibles à toute heure.", "k67": "Paiement échelonné", "k68": "Réglez en mensualités, sans intérêts.", "k69": "Test du code", "k70": "Prêt <em>pour le code ?</em>", "k71": "Répondez à trois questions rapides et voyez comment vous vous en sortez.", "k72": "Que signifie ce panneau ?", "k73": "Stationnement interdit", "k74": "Arrêt obligatoire", "k75": "Fin de priorité", "k76": "Exact !", "k77": "Pas tout à fait.", "k78": "Cédez le passage", "k79": "Route prioritaire", "k80": "Chute de pierres", "k81": "Vitesse minimale de 50 km/h", "k82": "Distance minimale de 50 mètres", "k83": "Vitesse maximale de 50 km/h", "k84": "Bonnes réponses :", "k85": "Permis voiture, <em>prix fixe</em>", "k86": "Aucun coût caché. Vous pouvez payer en mensualités sans intérêts.", "k87": "Code seul", "k88": "Pour commencer par la théorie", "k89": "forfait", "k90": "Cours théoriques en salle ou en ligne", "k91": "Plateforme d'entraînement illimitée", "k92": "Inscription et dossier", "k93": "Réservation de l'examen", "k94": "Le plus choisi", "k95": "Permis B complet", "k96": "Code et conduite, boîte manuelle", "k97": "Tout le contenu du forfait code", "k98": "32 leçons de conduite", "k99": "Leçon sur autoroute et de nuit", "k100": "Accompagnement aux deux examens", "k101": "Permis B automatique", "k102": "Code et conduite, boîte automatique", "k103": "Voiture automatique récente", "k104": "Leçons supplémentaires à 30 € l'unité. Les frais officiels d'examen ne sont pas inclus. Tarifs moto et poids lourds sur demande.", "k105": "Avis", "k106": "Des élèves déjà <em>sur la route</em>", "k107": "« J'ai passé le permis poids lourd pour changer de métier. Formation sérieuse et moniteurs très expérimentés. »", "k108": "Permis C", "k109": "« J'ai révisé le code sur mon téléphone pendant mes pauses au travail. Très pratique et bien organisé. »", "k110": "« J'avais très peur de conduire et mon moniteur a toujours été patient. J'ai réussi les deux examens du premier coup ! »", "k111": "Permis B · 19 ans", "k112": "Questions fréquentes", "k113": "Des questions ?", "k114": "Combien de temps faut-il pour avoir le permis ?", "k115": "En moyenne, de 2 à 4 mois. Cela dépend de vos disponibilités et des dates d'examen.", "k116": "Quels documents faut-il pour s'inscrire ?", "k117": "Une pièce d'identité, votre numéro fiscal et un certificat médical. Si besoin, nous vous indiquons où l'obtenir.", "k118": "Puis-je choisir les horaires des cours ?", "k119": "Oui. Nous proposons des cours le matin, l'après-midi, le soir et le samedi, et vous réservez vos leçons de conduite directement avec votre moniteur.", "k120": "Et si j'échoue à l'examen ?", "k121": "Pas de souci. Nous analysons ce qui n'a pas fonctionné, faisons les leçons de préparation nécessaires et réservons un nouvel examen.", "k122": "Commencez votre permis dès aujourd'hui", "k123": "Dites-nous quelle catégorie vous voulez passer et le meilleur horaire pour vous. Nous répondons le jour même avec toutes les informations.", "k124": "Adresse", "k125": "Téléphone", "k126": "Horaires", "k127": "Du lundi au vendredi, 9 h–20 h · Samedi, 9 h–13 h", "k128": "Demande d'inscription", "k129": "Nom", "k130": "Catégorie", "k131": "B — Voitures", "k132": "BE — Voitures avec remorque", "k133": "A — Motos", "k134": "AM — Cyclomoteurs", "k135": "C — Poids lourds", "k136": "CE — Poids lourds avec remorque", "k137": "D — Transport de passagers", "k138": "Boîte de vitesses", "k139": "Manuelle", "k140": "Automatique", "k141": "Horaire préféré", "k142": "Matin", "k143": "Après-midi", "k144": "Soir", "k145": "Samedi", "k146": "Avez-vous déjà le code ?", "k147": "Pas encore", "k148": "Oui, j'ai déjà le code", "k149": "Message (facultatif)", "k150": "💬 M'inscrire via WhatsApp", "k151": "Vos données servent uniquement à répondre à votre demande.", "k152": "Auto-école à Coimbra. Permis voiture, moto et poids lourd, avec des moniteurs diplômés et des voitures récentes.", "k153": "Navigation", "k154": "Suivez-nous", "k155": "Tous droits réservés"}, "it": {"k0": "Autoscuola", "k1": "Categorie", "k2": "Flotta", "k3": "Come funziona", "k4": "Prezzi", "k5": "Contatti", "k6": "Iscrivimi", "k7": "Autoscuola · Coimbra", "k8": "Prendi <em>il controllo.</em>", "k9": "Lezioni di teoria e di guida con istruttori pazienti, auto recenti e orari su misura. Dalla prima lezione al giorno dell'esame.", "k10": "Vedi le categorie", "k11": "Promossi al primo tentativo", "k12": "Anni di esperienza", "k13": "Veicoli per le lezioni", "k14": "Una patente per <em>ogni strada</em>", "k15": "Insegniamo tutte le categorie, dai ciclomotori ai mezzi pesanti, con veicoli adatti a ciascuna.", "k16": "Autovetture", "k17": "La patente più richiesta: veicoli fino a 3500 kg e 9 posti.", "k18": "Dai 18 anni", "k19": "Autovetture con rimorchio", "k20": "Per guidare con rimorchio, roulotte o carrello portabarca.", "k21": "Motocicli", "k22": "Categorie A1, A2 e A, dai 125 cc alle moto senza limiti di potenza.", "k23": "Dai 16 anni", "k24": "Ciclomotori", "k25": "Scooter e ciclomotori fino a 50 cc, ideali per la città.", "k26": "Mezzi pesanti", "k27": "Camion oltre 3500 kg, con formazione per autisti professionisti.", "k28": "Dai 21 anni", "k29": "Mezzi pesanti con rimorchio", "k30": "Autoarticolati e camion con rimorchio pesante.", "k31": "Autobus", "k32": "Autobus e veicoli con più di 9 posti.", "k33": "Dai 24 anni", "k34": "Lezioni di ripasso", "k35": "Per chi ha già la patente e vuole tornare a guidare con sicurezza.", "k36": "Per chi ha già la patente", "k37": "Veicoli recenti, <em>sempre impeccabili</em>", "k38": "Impara su auto e moto moderne, revisionate ogni mese, con doppi comandi e assicurazione completa.", "k39": "Auto con cambio manuale", "k40": "Cambio manuale a 6 marce, sensori di parcheggio e doppi comandi.", "k41": "Auto con cambio automatico", "k42": "Cambio automatico, ideale per chi preferisce guidare senza frizione.", "k43": "Moto da 125 a 650 cc, con equipaggiamento protettivo incluso nelle lezioni.", "k44": "Mezzi pesanti", "k45": "Camion e autobus per le lezioni, con istruttori con esperienza professionale.", "k46": "Cinque passi <em>verso la patente</em>", "k47": "Ci occupiamo di tutte le pratiche e ti seguiamo in ogni fase. Devi solo concentrarti sull'apprendimento.", "k48": "Iscrizione", "k49": "Porta il documento d'identità e il certificato medico. Al resto pensiamo noi.", "k50": "Lezioni di teoria", "k51": "Lezioni in aula o online e quiz di allenamento illimitati sulla nostra piattaforma.", "k52": "Esame di teoria", "k53": "Prenotiamo l'esame quando sei pronto, con simulazioni uguali a quelle reali.", "k54": "Lezioni di guida", "k55": "In città, in autostrada e di notte, al tuo ritmo e sempre con lo stesso istruttore.", "k56": "Esame di guida", "k57": "Ti accompagniamo all'esame e alla fine esci con la patente in mano.", "k58": "Perché Rota Certa", "k59": "Formazione seria, <em>conducenti sicuri</em>", "k60": "Insegniamo più che superare l'esame: insegniamo a guidare con tecnica, anticipo e sicurezza per tutta la vita.", "k61": "Istruttori qualificati", "k62": "Pazienti, esperti e sempre lo stesso istruttore dall'inizio alla fine.", "k63": "Auto recenti", "k64": "Cambio manuale o automatico, con aria condizionata e doppi comandi.", "k65": "Teoria sul telefono", "k66": "Migliaia di domande di allenamento, disponibili a qualsiasi ora.", "k67": "Pagamento rateale", "k68": "Dividi l'importo in rate mensili senza interessi.", "k69": "Quiz di teoria", "k70": "Sei pronto <em>per la teoria?</em>", "k71": "Rispondi a tre domande veloci e scopri come te la cavi.", "k72": "Che cosa significa questo segnale?", "k73": "Divieto di sosta", "k74": "Fermarsi e dare precedenza", "k75": "Fine del diritto di precedenza", "k76": "Esatto!", "k77": "Non proprio.", "k78": "Dare precedenza", "k79": "Strada con diritto di precedenza", "k80": "Caduta massi", "k81": "Velocità minima di 50 km/h", "k82": "Distanza minima di 50 metri", "k83": "Velocità massima di 50 km/h", "k84": "Risposte corrette:", "k85": "Patente B, <em>prezzo fisso</em>", "k86": "Nessun costo nascosto. Puoi pagare in rate mensili senza interessi.", "k87": "Solo teoria", "k88": "Per chi vuole iniziare dalla teoria", "k89": "pacchetto", "k90": "Lezioni teoriche in aula o online", "k91": "Piattaforma di allenamento illimitata", "k92": "Iscrizione e documentazione", "k93": "Prenotazione dell'esame", "k94": "Il più scelto", "k95": "Patente B completa", "k96": "Teoria e guida, cambio manuale", "k97": "Tutto ciò che include il pacchetto teoria", "k98": "32 lezioni di guida", "k99": "Lezione in autostrada e notturna", "k100": "Assistenza a entrambi gli esami", "k101": "Patente B automatica", "k102": "Teoria e guida, cambio automatico", "k103": "Auto automatica recente", "k104": "Lezioni extra a 30 € ciascuna. Le tasse d'esame ufficiali non sono incluse. Prezzi per moto e mezzi pesanti su richiesta.", "k105": "Recensioni", "k106": "Allievi già <em>in strada</em>", "k107": "“Ho preso la patente per mezzi pesanti per cambiare lavoro. Formazione seria e istruttori molto esperti.”", "k108": "Patente C", "k109": "“Ho studiato la teoria sul telefono nelle pause di lavoro. Molto pratico e ben organizzato.”", "k110": "“Avevo molta paura di guidare e l'istruttore è stato sempre paziente. Ho superato entrambi gli esami al primo tentativo!”", "k111": "Patente B · 19 anni", "k112": "Domande frequenti", "k113": "Hai dei dubbi?", "k114": "Quanto tempo ci vuole per prendere la patente?", "k115": "In media tra 2 e 4 mesi. Dipende dalla tua disponibilità per le lezioni e dalle date d'esame disponibili.", "k116": "Quali documenti servono per iscriversi?", "k117": "Documento d'identità, codice fiscale e certificato medico. Se serve, ti indichiamo dove ottenerlo.", "k118": "Posso scegliere gli orari delle lezioni?", "k119": "Sì. Abbiamo lezioni di mattina, di pomeriggio, di sera e il sabato, e prenoti le guide direttamente con il tuo istruttore.", "k120": "E se non supero l'esame?", "k121": "Nessun problema. Analizziamo cosa non è andato, facciamo le lezioni di preparazione necessarie e prenotiamo un nuovo esame.", "k122": "Inizia oggi a prendere la patente", "k123": "Dicci quale categoria vuoi prendere e l'orario migliore per te. Ti rispondiamo in giornata con tutte le informazioni.", "k124": "Indirizzo", "k125": "Telefono", "k126": "Orari", "k127": "Dal lunedì al venerdì, 9–20 · Sabato, 9–13", "k128": "Richiesta di iscrizione", "k129": "Nome", "k130": "Categoria", "k131": "B — Autovetture", "k132": "BE — Autovetture con rimorchio", "k133": "A — Motocicli", "k134": "AM — Ciclomotori", "k135": "C — Mezzi pesanti", "k136": "CE — Mezzi pesanti con rimorchio", "k137": "D — Autobus", "k138": "Cambio", "k139": "Manuale", "k140": "Automatico", "k141": "Orario preferito", "k142": "Mattina", "k143": "Pomeriggio", "k144": "Sera", "k145": "Sabato", "k146": "Hai già superato l'esame di teoria?", "k147": "Non ancora", "k148": "Sì, l'ho già superato", "k149": "Messaggio (facoltativo)", "k150": "💬 Iscrivimi su WhatsApp", "k151": "I tuoi dati vengono usati solo per rispondere alla tua richiesta.", "k152": "Autoscuola a Coimbra. Patenti per auto, moto e mezzi pesanti, con istruttori qualificati e auto recenti.", "k153": "Navigazione", "k154": "Seguici", "k155": "Tutti i diritti riservati"}, "de": {"k0": "Fahrschule", "k1": "Führerscheinklassen", "k2": "Fuhrpark", "k3": "So funktioniert's", "k4": "Preise", "k5": "Kontakt", "k6": "Jetzt anmelden", "k7": "Fahrschule · Coimbra", "k8": "Übernimm <em>die Kontrolle.</em>", "k9": "Theorie- und Fahrstunden mit geduldigen Fahrlehrern, neuen Autos und Zeiten, die zu dir passen. Von der ersten Stunde bis zum Prüfungstag.", "k10": "Klassen ansehen", "k11": "Beim ersten Versuch bestanden", "k12": "Jahre Erfahrung", "k13": "Fahrschulfahrzeuge", "k14": "Ein Führerschein für <em>jede Straße</em>", "k15": "Wir bilden in allen Klassen aus, vom Mofa bis zum Lkw, mit passenden Fahrzeugen für jede Klasse.", "k16": "Pkw", "k17": "Der beliebteste Führerschein: Fahrzeuge bis 3.500 kg und 9 Sitzplätze.", "k18": "Ab 18 Jahren", "k19": "Pkw mit Anhänger", "k20": "Zum Fahren mit Anhänger, Wohnwagen oder Bootstrailer.", "k21": "Motorräder", "k22": "Klassen A1, A2 und A, von 125 ccm bis zu Motorrädern ohne Leistungsgrenze.", "k23": "Ab 16 Jahren", "k24": "Kleinkrafträder", "k25": "Roller und Mopeds bis 50 ccm, ideal für die Stadt.", "k26": "Lkw", "k27": "Lkw über 3.500 kg, mit Ausbildung für Berufskraftfahrer.", "k28": "Ab 21 Jahren", "k29": "Lkw mit Anhänger", "k30": "Sattelzüge und Lkw mit schwerem Anhänger.", "k31": "Busse", "k32": "Busse und Fahrzeuge mit mehr als 9 Sitzplätzen.", "k33": "Ab 24 Jahren", "k34": "Auffrischungsstunden", "k35": "Für alle mit Führerschein, die wieder sicher fahren möchten.", "k36": "Für Führerscheininhaber", "k37": "Neue Fahrzeuge, <em>immer tadellos</em>", "k38": "Lerne auf modernen Autos und Motorrädern, monatlich gewartet, mit Doppelpedalen und Vollkaskoversicherung.", "k39": "Pkw mit Schaltgetriebe", "k40": "6-Gang-Schaltgetriebe, Parksensoren und Doppelpedale.", "k41": "Pkw mit Automatik", "k42": "Automatikgetriebe, ideal für alle, die ohne Kupplung fahren möchten.", "k43": "Motorräder von 125 bis 650 ccm, Schutzausrüstung im Unterricht inklusive.", "k44": "Lkw und Busse", "k45": "Fahrschul-Lkw und -Bus, mit Fahrlehrern mit Berufserfahrung.", "k46": "Fünf Schritte <em>zum Führerschein</em>", "k47": "Wir kümmern uns um alle Formalitäten und begleiten dich in jeder Phase. Du konzentrierst dich nur aufs Lernen.", "k48": "Anmeldung", "k49": "Bring deinen Ausweis und ein ärztliches Attest mit. Den Rest erledigen wir.", "k50": "Theorieunterricht", "k51": "Präsenz- oder Onlineunterricht und unbegrenzte Übungstests auf unserer Plattform.", "k52": "Theorieprüfung", "k53": "Wir melden dich zur Prüfung an, sobald du bereit bist – mit Probetests wie im Original.", "k54": "Fahrstunden", "k55": "In der Stadt, auf der Autobahn und nachts, in deinem Tempo und mit demselben Fahrlehrer.", "k56": "Praktische Prüfung", "k57": "Wir begleiten dich zur Prüfung und am Ende hältst du deinen Führerschein in der Hand.", "k58": "Warum Rota Certa", "k59": "Seriöse Ausbildung, <em>sichere Fahrer</em>", "k60": "Wir bringen dir mehr bei als das Bestehen der Prüfung: Fahren mit Technik, Vorausschau und Sicherheit – fürs ganze Leben.", "k61": "Zertifizierte Fahrlehrer", "k62": "Geduldig, erfahren und vom Anfang bis zum Ende derselbe Fahrlehrer.", "k63": "Neue Autos", "k64": "Schalt- oder Automatikgetriebe, mit Klimaanlage und Doppelpedalen.", "k65": "Theorie auf dem Handy", "k66": "Tausende Übungsfragen, jederzeit verfügbar.", "k67": "Ratenzahlung", "k68": "Teile den Betrag in zinsfreie Monatsraten auf.", "k69": "Theorie-Quiz", "k70": "Bereit <em>für die Theorie?</em>", "k71": "Beantworte drei kurze Fragen und sieh, wie du abschneidest.", "k72": "Was bedeutet dieses Schild?", "k73": "Parkverbot", "k74": "Halt! Vorfahrt gewähren", "k75": "Ende der Vorfahrtstraße", "k76": "Richtig!", "k77": "Nicht ganz.", "k78": "Vorfahrt gewähren", "k79": "Vorfahrtstraße", "k80": "Steinschlag", "k81": "Mindestgeschwindigkeit 50 km/h", "k82": "Mindestabstand 50 Meter", "k83": "Höchstgeschwindigkeit 50 km/h", "k84": "Richtige Antworten:", "k85": "Pkw-Führerschein <em>zum Festpreis</em>", "k86": "Keine versteckten Kosten. Du kannst in zinsfreien Monatsraten zahlen.", "k87": "Nur Theorie", "k88": "Für alle, die mit der Theorie beginnen möchten", "k89": "Paket", "k90": "Theorieunterricht vor Ort oder online", "k91": "Unbegrenzte Übungsplattform", "k92": "Anmeldung und Unterlagen", "k93": "Prüfungsanmeldung", "k94": "Am beliebtesten", "k95": "Führerschein B komplett", "k96": "Theorie und Praxis, Schaltgetriebe", "k97": "Alles aus dem Theoriepaket", "k98": "32 Fahrstunden", "k99": "Autobahn- und Nachtfahrt", "k100": "Begleitung bei beiden Prüfungen", "k101": "Führerschein B Automatik", "k102": "Theorie und Praxis, Automatikgetriebe", "k103": "Neues Automatikauto", "k104": "Zusätzliche Fahrstunden je 30 €. Offizielle Prüfungsgebühren sind nicht enthalten. Preise für Motorrad und Lkw auf Anfrage.", "k105": "Bewertungen", "k106": "Fahrschüler, die schon <em>auf der Straße sind</em>", "k107": "„Ich habe den Lkw-Führerschein gemacht, um den Beruf zu wechseln. Seriöse Ausbildung und sehr erfahrene Fahrlehrer.“", "k108": "Führerschein C", "k109": "„Ich habe die Theorie in den Arbeitspausen auf dem Handy gelernt. Sehr praktisch und gut organisiert.“", "k110": "„Ich hatte große Angst vorm Fahren und mein Fahrlehrer war immer geduldig. Ich habe beide Prüfungen beim ersten Mal bestanden!“", "k111": "Führerschein B · 19 Jahre", "k112": "Häufige Fragen", "k113": "Noch Fragen?", "k114": "Wie lange dauert der Führerschein?", "k115": "Im Durchschnitt 2 bis 4 Monate. Das hängt von deiner Verfügbarkeit für die Stunden und von den freien Prüfungsterminen ab.", "k116": "Welche Unterlagen brauche ich für die Anmeldung?", "k117": "Ausweis, Steuernummer und ein ärztliches Attest. Bei Bedarf sagen wir dir, wo du es bekommst.", "k118": "Kann ich die Unterrichtszeiten wählen?", "k119": "Ja. Wir haben Unterricht morgens, nachmittags, abends und samstags, und die Fahrstunden vereinbarst du direkt mit deinem Fahrlehrer.", "k120": "Und wenn ich durchfalle?", "k121": "Kein Problem. Wir schauen, was schiefgelaufen ist, machen die nötigen Vorbereitungsstunden und melden dich erneut zur Prüfung an.", "k122": "Starte heute mit deinem Führerschein", "k123": "Sag uns, welche Klasse du machen möchtest und welche Zeit dir am besten passt. Wir antworten noch am selben Tag mit allen Infos.", "k124": "Adresse", "k125": "Telefon", "k126": "Öffnungszeiten", "k127": "Montag bis Freitag, 9–20 Uhr · Samstag, 9–13 Uhr", "k128": "Anmeldeanfrage", "k129": "Name", "k130": "Klasse", "k131": "B — Pkw", "k132": "BE — Pkw mit Anhänger", "k133": "A — Motorräder", "k134": "AM — Kleinkrafträder", "k135": "C — Lkw", "k136": "CE — Lkw mit Anhänger", "k137": "D — Busse", "k138": "Getriebe", "k139": "Schaltgetriebe", "k140": "Automatik", "k141": "Bevorzugte Zeit", "k142": "Vormittag", "k143": "Nachmittag", "k144": "Abend", "k145": "Samstag", "k146": "Hast du die Theorieprüfung schon bestanden?", "k147": "Noch nicht", "k148": "Ja, schon bestanden", "k149": "Nachricht (optional)", "k150": "💬 Per WhatsApp anmelden", "k151": "Deine Daten werden nur zur Beantwortung deiner Anfrage verwendet.", "k152": "Fahrschule in Coimbra. Führerscheine für Pkw, Motorrad und Lkw, mit zertifizierten Fahrlehrern und neuen Autos.", "k153": "Navigation", "k154": "Folge uns", "k155": "Alle Rechte vorbehalten"}, "uk": {"k0": "Автошкола", "k1": "Категорії", "k2": "Автопарк", "k3": "Як це працює", "k4": "Ціни", "k5": "Контакти", "k6": "Записатися", "k7": "Автошкола · Коїмбра", "k8": "Візьміть <em>керування.</em>", "k9": "Теоретичні та практичні заняття з терплячими інструкторами, новими авто і зручним розкладом. Від першого уроку до дня іспиту.", "k10": "Переглянути категорії", "k11": "Складають з першого разу", "k12": "Років досвіду", "k13": "Навчальних автомобілів", "k14": "Права для <em>будь-якої дороги</em>", "k15": "Навчаємо всім категоріям — від мопедів до вантажівок — на транспорті, підібраному для кожної.", "k16": "Легкові авто", "k17": "Найпопулярніша категорія: авто до 3500 кг і 9 місць.", "k18": "З 18 років", "k19": "Легкові авто з причепом", "k20": "Для водіння з причепом, будинком на колесах або причепом для човна.", "k21": "Мотоцикли", "k22": "Категорії A1, A2 і A — від 125 см³ до мотоциклів без обмеження потужності.", "k23": "З 16 років", "k24": "Мопеди", "k25": "Скутери та мопеди до 50 см³, ідеальні для міста.", "k26": "Вантажні авто", "k27": "Вантажівки понад 3500 кг, з підготовкою професійних водіїв.", "k28": "З 21 року", "k29": "Вантажні авто з причепом", "k30": "Сідельні тягачі та вантажівки з важким причепом.", "k31": "Пасажирський транспорт", "k32": "Автобуси та транспорт на понад 9 місць.", "k33": "З 24 років", "k34": "Відновлювальні заняття", "k35": "Для тих, хто вже має права і хоче впевнено повернутися за кермо.", "k36": "Для водіїв із правами", "k37": "Нові автомобілі, <em>завжди бездоганні</em>", "k38": "Навчайтеся на сучасних авто й мотоциклах, які щомісяця проходять техогляд, з подвійними педалями та повним страхуванням.", "k39": "Легкове авто, механіка", "k40": "6-ступінчаста механічна коробка, датчики паркування та подвійні педалі.", "k41": "Легкове авто, автомат", "k42": "Автоматична коробка — ідеально для тих, хто хоче їздити без зчеплення.", "k43": "Мотоцикли від 125 до 650 см³, захисне спорядження на заняттях включено.", "k44": "Важкий транспорт", "k45": "Навчальні вантажівка та автобус, інструктори з професійним досвідом.", "k46": "П'ять кроків <em>до ваших прав</em>", "k47": "Ми беремо на себе всі документи й супроводжуємо вас на кожному етапі. Вам залишається тільки вчитися.", "k48": "Реєстрація", "k49": "Принесіть посвідчення особи та медичну довідку. Решту зробимо ми.", "k50": "Заняття з теорії", "k51": "Очні або онлайн-заняття та необмежені тренувальні тести на нашій платформі.", "k52": "Іспит з теорії", "k53": "Записуємо на іспит, коли ви готові, з пробними тестами, як на справжньому.", "k54": "Уроки водіння", "k55": "У місті, на автомагістралі та вночі — у вашому темпі й з тим самим інструктором.", "k56": "Іспит з водіння", "k57": "Супроводжуємо вас на іспит, і ви йдете вже з правами в руках.", "k58": "Чому Rota Certa", "k59": "Серйозна підготовка — <em>впевнені водії</em>", "k60": "Ми вчимо не лише складати іспит, а й водити технічно, передбачливо й безпечно — на все життя.", "k61": "Сертифіковані інструктори", "k62": "Терплячі, досвідчені й той самий інструктор від початку до кінця.", "k63": "Нові автомобілі", "k64": "Механічна або автоматична коробка, кондиціонер і подвійні педалі.", "k65": "Теорія в телефоні", "k66": "Тисячі тренувальних запитань, доступних будь-коли.", "k67": "Оплата частинами", "k68": "Розділіть суму на щомісячні платежі без відсотків.", "k69": "Тест з теорії", "k70": "Готові <em>до іспиту з теорії?</em>", "k71": "Дайте відповідь на три короткі запитання й перевірте себе.", "k72": "Що означає цей знак?", "k73": "Стоянку заборонено", "k74": "Обов'язкова зупинка", "k75": "Кінець головної дороги", "k76": "Правильно!", "k77": "Не зовсім так.", "k78": "Дати дорогу", "k79": "Головна дорога", "k80": "Обвал каміння", "k81": "Мінімальна швидкість 50 км/год", "k82": "Мінімальна дистанція 50 метрів", "k83": "Максимальна швидкість 50 км/год", "k84": "Правильних відповідей:", "k85": "Права категорії B <em>за фіксованою ціною</em>", "k86": "Жодних прихованих витрат. Можна платити щомісяця без відсотків.", "k87": "Лише теорія", "k88": "Для тих, хто хоче почати з теорії", "k89": "пакет", "k90": "Очні або онлайн-заняття з теорії", "k91": "Необмежена тренувальна платформа", "k92": "Реєстрація та документи", "k93": "Запис на іспит", "k94": "Найпопулярніший", "k95": "Повний курс B", "k96": "Теорія і практика, механічна коробка", "k97": "Усе, що входить у пакет з теорії", "k98": "32 уроки водіння", "k99": "Урок на автомагістралі та нічне водіння", "k100": "Супровід на обох іспитах", "k101": "Курс B на автоматі", "k102": "Теорія і практика, автоматична коробка", "k103": "Новий автомобіль з автоматом", "k104": "Додаткові уроки — 30 € за кожен. Офіційні збори за іспити не включено. Ціни для мотоциклів і вантажівок — за запитом.", "k105": "Відгуки", "k106": "Учні, які вже <em>їздять дорогами</em>", "k107": "«Отримав права на вантажівку, щоб змінити професію. Серйозна підготовка й дуже досвідчені інструктори.»", "k108": "Категорія C", "k109": "«Вчив теорію в телефоні під час перерв на роботі. Дуже зручно й добре організовано.»", "k110": "«Я дуже боялася кермувати, а інструктор завжди був терплячим. Склала обидва іспити з першого разу!»", "k111": "Категорія B · 19 років", "k112": "Часті запитання", "k113": "Маєте запитання?", "k114": "Скільки часу потрібно, щоб отримати права?", "k115": "У середньому від 2 до 4 місяців. Залежить від вашої зайнятості та вільних дат іспитів.", "k116": "Які документи потрібні для реєстрації?", "k117": "Посвідчення особи, податковий номер і медична довідка. Якщо потрібно, підкажемо, де її отримати.", "k118": "Чи можна обирати час занять?", "k119": "Так. Заняття є вранці, вдень, увечері та в суботу, а уроки водіння ви бронюєте напряму з інструктором.", "k120": "А якщо я не складу іспит?", "k121": "Нічого страшного. Розберемо помилки, проведемо потрібні додаткові заняття й запишемо на новий іспит.", "k122": "Почніть отримувати права вже сьогодні", "k123": "Напишіть, яку категорію хочете отримати і коли вам зручно. Відповімо того ж дня з усією інформацією.", "k124": "Адреса", "k125": "Телефон", "k126": "Години роботи", "k127": "Понеділок–п'ятниця, 9:00–20:00 · Субота, 9:00–13:00", "k128": "Заявка на навчання", "k129": "Ім'я", "k130": "Категорія", "k131": "B — Легкові авто", "k132": "BE — Легкові авто з причепом", "k133": "A — Мотоцикли", "k134": "AM — Мопеди", "k135": "C — Вантажні авто", "k136": "CE — Вантажні авто з причепом", "k137": "D — Пасажирський транспорт", "k138": "Коробка передач", "k139": "Механічна", "k140": "Автоматична", "k141": "Бажаний час", "k142": "Ранок", "k143": "День", "k144": "Вечір", "k145": "Субота", "k146": "Ви вже склали іспит з теорії?", "k147": "Ще ні", "k148": "Так, уже склав(ла)", "k149": "Повідомлення (необов'язково)", "k150": "💬 Записатися через WhatsApp", "k151": "Ваші дані використовуються лише для відповіді на ваш запит.", "k152": "Автошкола в Коїмбрі. Права на легкові авто, мотоцикли та вантажівки, сертифіковані інструктори й нові авто.", "k153": "Навігація", "k154": "Ми в соцмережах", "k155": "Усі права захищено"}, "ru": {"k0": "Автошкола", "k1": "Категории", "k2": "Автопарк", "k3": "Как это работает", "k4": "Цены", "k5": "Контакты", "k6": "Записаться", "k7": "Автошкола · Коимбра", "k8": "Возьмите <em>управление.</em>", "k9": "Теоретические и практические занятия с терпеливыми инструкторами, новыми автомобилями и удобным расписанием. От первого урока до дня экзамена.", "k10": "Смотреть категории", "k11": "Сдают с первого раза", "k12": "Лет опыта", "k13": "Учебных автомобилей", "k14": "Права для <em>любой дороги</em>", "k15": "Обучаем всем категориям — от мопедов до грузовиков — на транспорте, подобранном для каждой.", "k16": "Легковые авто", "k17": "Самая популярная категория: авто до 3500 кг и 9 мест.", "k18": "С 18 лет", "k19": "Легковые авто с прицепом", "k20": "Для вождения с прицепом, домом на колёсах или прицепом для лодки.", "k21": "Мотоциклы", "k22": "Категории A1, A2 и A — от 125 см³ до мотоциклов без ограничения мощности.", "k23": "С 16 лет", "k24": "Мопеды", "k25": "Скутеры и мопеды до 50 см³, идеальные для города.", "k26": "Грузовые авто", "k27": "Грузовики свыше 3500 кг, с подготовкой профессиональных водителей.", "k28": "С 21 года", "k29": "Грузовые авто с прицепом", "k30": "Седельные тягачи и грузовики с тяжёлым прицепом.", "k31": "Пассажирский транспорт", "k32": "Автобусы и транспорт более чем на 9 мест.", "k33": "С 24 лет", "k34": "Восстановительные занятия", "k35": "Для тех, у кого уже есть права и кто хочет уверенно вернуться за руль.", "k36": "Для водителей с правами", "k37": "Новые автомобили, <em>всегда безупречные</em>", "k38": "Учитесь на современных автомобилях и мотоциклах, которые ежемесячно проходят техосмотр, с двойными педалями и полной страховкой.", "k39": "Легковое авто, механика", "k40": "6-ступенчатая механическая коробка, датчики парковки и двойные педали.", "k41": "Легковое авто, автомат", "k42": "Автоматическая коробка — идеально для тех, кто хочет ездить без сцепления.", "k43": "Мотоциклы от 125 до 650 см³, защитная экипировка на занятиях включена.", "k44": "Тяжёлый транспорт", "k45": "Учебные грузовик и автобус, инструкторы с профессиональным опытом.", "k46": "Пять шагов <em>до ваших прав</em>", "k47": "Мы берём на себя все документы и сопровождаем вас на каждом этапе. Вам остаётся только учиться.", "k48": "Запись", "k49": "Принесите удостоверение личности и медицинскую справку. Остальное сделаем мы.", "k50": "Занятия по теории", "k51": "Очные или онлайн-занятия и неограниченные тренировочные тесты на нашей платформе.", "k52": "Экзамен по теории", "k53": "Записываем на экзамен, когда вы готовы, с пробными тестами, как на настоящем.", "k54": "Уроки вождения", "k55": "В городе, на автомагистрали и ночью — в вашем темпе и с одним и тем же инструктором.", "k56": "Экзамен по вождению", "k57": "Сопровождаем вас на экзамен, и вы уходите уже с правами в руках.", "k58": "Почему Rota Certa", "k59": "Серьёзная подготовка — <em>уверенные водители</em>", "k60": "Мы учим не просто сдавать экзамен, а водить технично, предусмотрительно и безопасно — на всю жизнь.", "k61": "Сертифицированные инструкторы", "k62": "Терпеливые, опытные и один и тот же инструктор от начала до конца.", "k63": "Новые автомобили", "k64": "Механическая или автоматическая коробка, кондиционер и двойные педали.", "k65": "Теория в телефоне", "k66": "Тысячи тренировочных вопросов, доступных в любое время.", "k67": "Оплата частями", "k68": "Разделите сумму на ежемесячные платежи без процентов.", "k69": "Тест по теории", "k70": "Готовы <em>к экзамену по теории?</em>", "k71": "Ответьте на три коротких вопроса и проверьте себя.", "k72": "Что означает этот знак?", "k73": "Стоянка запрещена", "k74": "Обязательная остановка", "k75": "Конец главной дороги", "k76": "Верно!", "k77": "Не совсем так.", "k78": "Уступите дорогу", "k79": "Главная дорога", "k80": "Камнепад", "k81": "Минимальная скорость 50 км/ч", "k82": "Минимальная дистанция 50 метров", "k83": "Максимальная скорость 50 км/ч", "k84": "Правильных ответов:", "k85": "Права категории B <em>по фиксированной цене</em>", "k86": "Никаких скрытых расходов. Можно платить ежемесячно без процентов.", "k87": "Только теория", "k88": "Для тех, кто хочет начать с теории", "k89": "пакет", "k90": "Очные или онлайн-занятия по теории", "k91": "Неограниченная тренировочная платформа", "k92": "Запись и документы", "k93": "Запись на экзамен", "k94": "Самый популярный", "k95": "Полный курс B", "k96": "Теория и практика, механическая коробка", "k97": "Всё, что входит в пакет по теории", "k98": "32 урока вождения", "k99": "Урок на автомагистрали и ночное вождение", "k100": "Сопровождение на обоих экзаменах", "k101": "Курс B на автомате", "k102": "Теория и практика, автоматическая коробка", "k103": "Новый автомобиль с автоматом", "k104": "Дополнительные уроки — 30 € за каждый. Официальные сборы за экзамены не включены. Цены для мотоциклов и грузовиков — по запросу.", "k105": "Отзывы", "k106": "Ученики, которые уже <em>ездят по дорогам</em>", "k107": "«Получил права на грузовик, чтобы сменить профессию. Серьёзная подготовка и очень опытные инструкторы.»", "k108": "Категория C", "k109": "«Учил теорию в телефоне в перерывах на работе. Очень удобно и хорошо организовано.»", "k110": "«Я очень боялась водить, а инструктор всегда был терпеливым. Сдала оба экзамена с первого раза!»", "k111": "Категория B · 19 лет", "k112": "Частые вопросы", "k113": "Есть вопросы?", "k114": "Сколько времени нужно, чтобы получить права?", "k115": "В среднем от 2 до 4 месяцев. Зависит от вашей занятости и свободных дат экзаменов.", "k116": "Какие документы нужны для записи?", "k117": "Удостоверение личности, налоговый номер и медицинская справка. Если нужно, подскажем, где её получить.", "k118": "Можно ли выбирать время занятий?", "k119": "Да. Занятия есть утром, днём, вечером и в субботу, а уроки вождения вы бронируете напрямую с инструктором.", "k120": "А если я не сдам экзамен?", "k121": "Ничего страшного. Разберём ошибки, проведём нужные дополнительные занятия и запишем на новый экзамен.", "k122": "Начните получать права уже сегодня", "k123": "Напишите, какую категорию хотите получить и когда вам удобно. Ответим в тот же день со всей информацией.", "k124": "Адрес", "k125": "Телефон", "k126": "Часы работы", "k127": "Понедельник–пятница, 9:00–20:00 · Суббота, 9:00–13:00", "k128": "Заявка на обучение", "k129": "Имя", "k130": "Категория", "k131": "B — Легковые авто", "k132": "BE — Легковые авто с прицепом", "k133": "A — Мотоциклы", "k134": "AM — Мопеды", "k135": "C — Грузовые авто", "k136": "CE — Грузовые авто с прицепом", "k137": "D — Пассажирский транспорт", "k138": "Коробка передач", "k139": "Механическая", "k140": "Автоматическая", "k141": "Удобное время", "k142": "Утро", "k143": "День", "k144": "Вечер", "k145": "Суббота", "k146": "Вы уже сдали экзамен по теории?", "k147": "Ещё нет", "k148": "Да, уже сдал(а)", "k149": "Сообщение (необязательно)", "k150": "💬 Записаться через WhatsApp", "k151": "Ваши данные используются только для ответа на ваш запрос.", "k152": "Автошкола в Коимбре. Права на легковые авто, мотоциклы и грузовики, сертифицированные инструкторы и новые авто.", "k153": "Навигация", "k154": "Мы в соцсетях", "k155": "Все права защищены"}, "ja": {"k0": "自動車教習所", "k1": "免許の種類", "k2": "教習車", "k3": "ご利用の流れ", "k4": "料金", "k5": "お問い合わせ", "k6": "申し込む", "k7": "自動車教習所 · コインブラ", "k8": "ハンドルを<em>その手に。</em>", "k9": "丁寧な指導員、新しい教習車、あなたに合わせた時間割で、学科と技能を教えます。最初の授業から試験当日まで。", "k10": "免許の種類を見る", "k11": "一発合格率", "k12": "年の実績", "k13": "台の教習車", "k14": "<em>あらゆる道</em>のための免許", "k15": "原付から大型車まで、すべての種類に対応。それぞれに適した車両で教習します。", "k16": "普通自動車", "k17": "いちばん人気の免許。3500kg・9人乗りまでの車両。", "k18": "18歳から", "k19": "普通自動車+けん引", "k20": "トレーラー、キャンピングカー、ボートトレーラーのけん引に。", "k21": "二輪車", "k22": "A1、A2、A。125ccから排気量・出力制限のないバイクまで。", "k23": "16歳から", "k24": "原付", "k25": "50ccまでのスクーターや原付。街乗りに最適です。", "k26": "大型貨物", "k27": "3500kgを超えるトラック。プロドライバー向けの講習付き。", "k28": "21歳から", "k29": "大型貨物+けん引", "k30": "セミトレーラーや大型トレーラー付きトラック。", "k31": "旅客車両", "k32": "バスや9人乗りを超える車両。", "k33": "24歳から", "k34": "ペーパードライバー講習", "k35": "免許はあるけれど、自信を持って運転を再開したい方に。", "k36": "免許をお持ちの方向け", "k37": "新しい車両を<em>常に完璧な状態で</em>", "k38": "毎月点検済みの最新の車とバイクで、補助ブレーキと総合保険付きで学べます。", "k39": "普通車 MT", "k40": "6速MT、パーキングセンサー、補助ブレーキ付き。", "k41": "普通車 AT", "k42": "AT車。クラッチ操作なしで運転したい方に最適です。", "k43": "125ccから650ccまでのバイク。教習中のプロテクター付き。", "k44": "大型車", "k45": "教習用トラックとバス。プロの運転経験を持つ指導員が担当します。", "k46": "免許取得までの<em>5つのステップ</em>", "k47": "手続きはすべて私たちにお任せ。各段階でサポートするので、学ぶことだけに集中できます。", "k48": "お申し込み", "k49": "身分証明書と診断書をお持ちください。あとは私たちが手続きします。", "k50": "学科教習", "k51": "教室またはオンラインの授業と、プラットフォームでの模擬テストが無制限。", "k52": "学科試験", "k53": "準備ができたら試験を予約。本番と同じ形式の模擬試験で対策します。", "k54": "技能教習", "k55": "市街地、高速道路、夜間も。あなたのペースで、同じ指導員が担当します。", "k56": "技能試験", "k57": "試験に同行し、最後は免許を手にお帰りいただけます。", "k58": "Rota Certaが選ばれる理由", "k59": "本格的な教習で、<em>安全なドライバーに</em>", "k60": "試験に合格するだけではなく、技術・予測・安全を身につけ、一生役立つ運転を教えます。", "k61": "資格を持つ指導員", "k62": "辛抱強く経験豊富。最初から最後まで同じ指導員が担当します。", "k63": "新しい教習車", "k64": "MT・AT両方あり。エアコンと補助ブレーキ付き。", "k65": "学科はスマホで", "k66": "数千問の練習問題を、いつでも利用できます。", "k67": "分割払い", "k68": "金利なしの月々分割でお支払いいただけます。", "k69": "学科クイズ", "k70": "<em>学科試験</em>の準備はOK?", "k71": "3つの質問に答えて、実力をチェックしましょう。", "k72": "この標識の意味は?", "k73": "駐車禁止", "k74": "一時停止", "k75": "優先道路の終わり", "k76": "正解!", "k77": "残念、不正解です。", "k78": "徐行・譲れ", "k79": "優先道路", "k80": "落石注意", "k81": "最低速度50km/h", "k82": "車間距離50m", "k83": "最高速度50km/h", "k84": "正解数:", "k85": "普通免許、<em>明朗な定額制</em>", "k86": "追加費用なし。金利なしの月々分割払いも可能です。", "k87": "学科のみ", "k88": "学科から始めたい方に", "k89": "パック", "k90": "教室またはオンラインの学科授業", "k91": "練習プラットフォーム使い放題", "k92": "申し込みと書類手続き", "k93": "試験の予約", "k94": "いちばん人気", "k95": "普通免許フルコース", "k96": "学科+技能、MT車", "k97": "学科パックの内容すべて", "k98": "技能教習32時限", "k99": "高速道路・夜間教習", "k100": "両試験への同行サポート", "k101": "普通免許ATコース", "k102": "学科+技能、AT車", "k103": "新しいAT教習車", "k104": "追加教習は1回30€。公式の試験手数料は含まれていません。二輪・大型の料金はお問い合わせください。", "k105": "お客様の声", "k106": "もう<em>道を走っている</em>生徒たち", "k107": "「転職のために大型免許を取りました。しっかりした講習と経験豊富な指導員です。」", "k108": "大型免許", "k109": "「仕事の休憩中にスマホで学科を勉強しました。とても便利でよく整っています。」", "k110": "「運転がとても怖かったのですが、指導員はいつも辛抱強く教えてくれました。両方の試験に一発合格!」", "k111": "普通免許 · 19歳", "k112": "よくあるご質問", "k113": "ご質問はありますか?", "k114": "免許取得までどのくらいかかりますか?", "k115": "平均で2〜4か月です。授業に通える頻度と、試験の空き日程によって変わります。", "k116": "申し込みに必要な書類は?", "k117": "身分証明書、納税者番号、診断書です。必要であれば取得先をご案内します。", "k118": "授業の時間は選べますか?", "k119": "はい。朝・昼・夜・土曜日に授業があり、技能教習は担当指導員と直接予約できます。", "k120": "試験に落ちたら?", "k121": "心配いりません。原因を確認し、必要な補習を行ってから再試験を予約します。", "k122": "今日から免許取得を始めましょう", "k123": "取りたい免許の種類と都合のよい時間帯を教えてください。当日中に詳しくご案内します。", "k124": "住所", "k125": "電話", "k126": "営業時間", "k127": "月〜金 9:00〜20:00 · 土 9:00〜13:00", "k128": "お申し込み", "k129": "お名前", "k130": "免許の種類", "k131": "B — 普通自動車", "k132": "BE — 普通自動車+けん引", "k133": "A — 二輪車", "k134": "AM — 原付", "k135": "C — 大型貨物", "k136": "CE — 大型貨物+けん引", "k137": "D — 旅客車両", "k138": "トランスミッション", "k139": "MT(マニュアル)", "k140": "AT(オートマ)", "k141": "希望の時間帯", "k142": "午前", "k143": "午後", "k144": "", "k145": "土曜日", "k146": "学科試験はもう合格していますか?", "k147": "まだです", "k148": "はい、合格済みです", "k149": "メッセージ(任意)", "k150": "💬 WhatsAppで申し込む", "k151": "お客様の情報はお問い合わせへの返信にのみ使用します。", "k152": "コインブラの自動車教習所。普通車、二輪、大型の免許を、資格を持つ指導員と新しい教習車で。", "k153": "メニュー", "k154": "フォローする", "k155": "無断転載禁止"}, "zh": {"k0": "驾校", "k1": "驾照类别", "k2": "车队", "k3": "学车流程", "k4": "价格", "k5": "联系我们", "k6": "立即报名", "k7": "驾校 · 科英布拉", "k8": "掌控<em>方向。</em>", "k9": "耐心的教练、新款教练车、灵活的时间安排,理论与实操一站搞定。从第一节课到考试当天全程陪伴。", "k10": "查看驾照类别", "k11": "一次通过率", "k12": "年经验", "k13": "辆教练车", "k14": "每条路<em>都有对应的驾照</em>", "k15": "从轻便摩托到重型车辆,所有类别均可学习,并配备相应车辆。", "k16": "小型汽车", "k17": "最热门的驾照:3500公斤以下、9座以内的车辆。", "k18": "18岁起", "k19": "小型汽车带挂车", "k20": "可驾驶带拖车、房车或船只拖车的车辆。", "k21": "摩托车", "k22": "A1、A2和A类,从125cc到无功率限制的摩托车。", "k23": "16岁起", "k24": "轻便摩托车", "k25": "50cc以下的踏板车和轻便摩托,适合城市出行。", "k26": "重型货车", "k27": "3500公斤以上的货车,提供职业司机培训。", "k28": "21岁起", "k29": "重型货车带挂车", "k30": "半挂车和带重型挂车的货车。", "k31": "客运车辆", "k32": "大巴及9座以上的车辆。", "k33": "24岁起", "k34": "陪驾复训课", "k35": "适合已有驾照、想重新自信上路的人。", "k36": "适合已持证司机", "k37": "新款车辆,<em>始终车况完美</em>", "k38": "在每月检修的新款汽车和摩托车上学习,配备副驾驶刹车和全险。", "k39": "手动挡小型汽车", "k40": "6速手动变速箱,配备倒车雷达和副驾驶刹车。", "k41": "自动挡小型汽车", "k42": "自动变速箱,适合不想踩离合器的学员。", "k43": "125cc至650cc摩托车,上课提供防护装备。", "k44": "重型车辆", "k45": "教学用货车和大巴,由具有职业驾驶经验的教练授课。", "k46": "五步<em>拿到驾照</em>", "k47": "所有手续由我们办理,每个阶段全程陪伴。你只需专心学习。", "k48": "报名", "k49": "带上身份证件和体检证明,其余交给我们。", "k50": "理论课", "k51": "线下或线上授课,平台模拟题无限练习。", "k52": "理论考试", "k53": "准备好后为你预约考试,模拟题与真实考试一致。", "k54": "实操课", "k55": "城市道路、高速公路和夜间驾驶,按你的节奏,由同一位教练指导。", "k56": "路考", "k57": "全程陪同考试,结束时驾照到手。", "k58": "为什么选择Rota Certa", "k59": "严谨培训,<em>安全驾驶</em>", "k60": "我们教的不只是通过考试,而是让你掌握技术、预判和安全,受用一生的驾驶能力。", "k61": "持证教练", "k62": "耐心、经验丰富,从头到尾由同一位教练负责。", "k63": "新款教练车", "k64": "手动挡或自动挡,配备空调和副驾驶刹车。", "k65": "手机学理论", "k66": "数千道练习题,随时随地可用。", "k67": "分期付款", "k68": "费用可分月支付,免利息。", "k69": "理论小测验", "k70": "准备好<em>考理论了吗?</em>", "k71": "回答三个小问题,看看你的水平。", "k72": "这个标志是什么意思?", "k73": "禁止停车", "k74": "停车让行", "k75": "优先道路结束", "k76": "答对了!", "k77": "不太对哦。", "k78": "减速让行", "k79": "优先道路", "k80": "注意落石", "k81": "最低限速50公里/小时", "k82": "最小车距50米", "k83": "最高限速50公里/小时", "k84": "答对题数:", "k85": "小型汽车驾照,<em>一口价</em>", "k86": "没有隐藏费用。可按月免息分期付款。", "k87": "仅理论", "k88": "适合想先学理论的学员", "k89": "套餐", "k90": "线下或线上理论课", "k91": "无限次练习平台", "k92": "报名及资料办理", "k93": "考试预约", "k94": "最受欢迎", "k95": "B照全程班", "k96": "理论+实操,手动挡", "k97": "包含理论套餐全部内容", "k98": "32节实操课", "k99": "高速公路及夜间驾驶课", "k100": "两场考试全程陪同", "k101": "B照自动挡班", "k102": "理论+实操,自动挡", "k103": "新款自动挡教练车", "k104": "加课每节30欧元。不含官方考试费。摩托车和重型车辆价格请咨询。", "k105": "学员评价", "k106": "已经<em>上路</em>的学员", "k107": "\"为了转行我考了货车驾照。培训认真,教练经验非常丰富。\"", "k108": "C照", "k109": "\"我利用工作休息时间在手机上学理论,非常方便,安排得很好。\"", "k110": "\"我以前很怕开车,教练一直很有耐心。两场考试我都一次通过了!\"", "k111": "B照 · 19岁", "k112": "常见问题", "k113": "有疑问吗?", "k114": "拿驾照需要多长时间?", "k115": "平均2至4个月,取决于你的上课时间和可预约的考试日期。", "k116": "报名需要哪些材料?", "k117": "身份证件、税号和体检证明。如有需要,我们会告诉你在哪里办理。", "k118": "可以自己选上课时间吗?", "k119": "可以。我们在上午、下午、晚上和周六都有课,实操课可直接与教练预约。", "k120": "考试没通过怎么办?", "k121": "没关系。我们会分析问题,安排必要的补习课,再为你预约考试。", "k122": "今天就开始学车吧", "k123": "告诉我们你想考的驾照类别和方便的时间,我们当天回复所有信息。", "k124": "地址", "k125": "电话", "k126": "营业时间", "k127": "周一至周五 9:00–20:00 · 周六 9:00–13:00", "k128": "报名申请", "k129": "姓名", "k130": "驾照类别", "k131": "B — 小型汽车", "k132": "BE — 小型汽车带挂车", "k133": "A — 摩托车", "k134": "AM — 轻便摩托车", "k135": "C — 重型货车", "k136": "CE — 重型货车带挂车", "k137": "D — 客运车辆", "k138": "变速箱", "k139": "手动挡", "k140": "自动挡", "k141": "偏好时间", "k142": "上午", "k143": "下午", "k144": "晚上", "k145": "周六", "k146": "你已经通过理论考试了吗?", "k147": "还没有", "k148": "是的,已经通过", "k149": "留言(可选)", "k150": "💬 通过WhatsApp报名", "k151": "您的信息仅用于回复您的咨询。", "k152": "科英布拉的驾校。小型汽车、摩托车和重型车辆驾照,持证教练,新款教练车。", "k153": "导航", "k154": "关注我们", "k155": "版权所有"}};
+  const LANG_FLAGS = {"pt": "https://flagcdn.com/w40/pt.png", "en": "https://flagcdn.com/w40/gb.png", "es": "https://flagcdn.com/w40/es.png", "fr": "https://flagcdn.com/w40/fr.png", "it": "https://flagcdn.com/w40/it.png", "de": "https://flagcdn.com/w40/de.png", "uk": "https://flagcdn.com/w40/ua.png", "ru": "https://flagcdn.com/w40/ru.png", "ja": "https://flagcdn.com/w40/jp.png", "zh": "https://flagcdn.com/w40/cn.png"};
+  const ptText = {};
+  document.querySelectorAll('[data-i18n]').forEach(el => { ptText[el.dataset.i18n] = el.innerHTML; });
+  const langBox = document.getElementById('lang');
+  function setLang(lang) {
+    if (lang !== 'pt' && !I18N[lang]) lang = 'pt';
+    const dict = I18N[lang] || {};
+    document.querySelectorAll('[data-i18n]').forEach(el => { const k = el.dataset.i18n; el.innerHTML = dict[k] ?? ptText[k]; });
+    document.documentElement.lang = lang === 'pt' ? 'pt-PT' : lang;
+    document.getElementById('langFlag').src = LANG_FLAGS[lang];
+    document.getElementById('langCode').textContent = lang.toUpperCase();
+    document.querySelectorAll('#langMenu button').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+  }
+  document.getElementById('langBtn').addEventListener('click', e => {
+    e.stopPropagation();
+    const open = langBox.classList.toggle('open');
+    e.currentTarget.setAttribute('aria-expanded', open);
+  });
+  document.querySelectorAll('#langMenu button').forEach(b => b.addEventListener('click', () => { setLang(b.dataset.lang); langBox.classList.remove('open'); }));
+  document.addEventListener('click', () => langBox.classList.remove('open'));
+  let saved = null;
+  try { saved = localStorage.getItem('lang'); } catch (e) {}
+  setLang(saved || (navigator.language || 'pt').slice(0, 2));
+</script>
+</body>
+</html>
